@@ -1,0 +1,1 @@
+During initial attempt to disable the ACR firewall caused STEP 00 - NGINX IMAGE synch job to fail. We need to add a maintenance mode flag to prevent this error. This is necessary to minimizing the Decom process.
