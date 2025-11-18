@@ -1,0 +1,1 @@
+helm install komodor-agent komodorio/komodor-agent --set apiKey=f5ab25d4-2a1a-40cf-a99f-ee02adefa3f6 --set clusterName=fnf-lev-aks-dev-01  --timeout=90s --namespace komodor
