@@ -1,0 +1,6 @@
+env:
+  - name: KOMODOR_API_KEY
+    valueFrom:
+      secretKeyRef:
+        name: komodor-secrets
+        key: apiKey
