@@ -1,0 +1,35 @@
+2025-11-25T11:31:47.3992091Z [31m[0mThere are some problems with the configuration, described below.
+2025-11-25T11:31:47.3992344Z 
+2025-11-25T11:31:47.3992812Z The Terraform configuration must be valid before initialization so that
+2025-11-25T11:31:47.3993868Z Terraform can determine which modules and providers need to be installed.[0m[0m[0m
+2025-11-25T11:31:47.3994197Z [31m
+2025-11-25T11:31:47.3994675Z [1m[31mError: [0m[0m[1mDuplicate local value definition[0m
+2025-11-25T11:31:47.3994774Z 
+2025-11-25T11:31:47.3995181Z [0m  on aks_komodor.tf line 2, in locals:
+2025-11-25T11:31:47.3995674Z    2: 	  [4maks_clusternames = { for k, v in local.aks_instances :[0m
+2025-11-25T11:31:47.3996518Z [0m   3: [4m		    k => (v.name == "" ?[0m
+2025-11-25T11:31:47.3997145Z [0m   4: [4m			      lower("aks-${local.basic["local"].env_short}-${local.basic["local"].region_short}-${v.numeric}")[0m
+2025-11-25T11:31:47.3997531Z [0m   5: [4m			      :[0m
+2025-11-25T11:31:47.3998193Z [0m   6: [4m			      lower("aks-${v.name}-${local.basic["local"].env_short}-${local.basic["local"].region_short}-${v.numeric}")[0m
+2025-11-25T11:31:47.3998553Z [0m   7: [4m		    )[0m
+2025-11-25T11:31:47.3998898Z [0m   8: [4m    }[0m
+2025-11-25T11:31:47.3999178Z [0m
+2025-11-25T11:31:47.3999582Z A local value named "aks_clusternames" was already defined at aks.tf:9,2-15,3.
+2025-11-25T11:31:47.3999899Z Local value names must be unique within a module.
+2025-11-25T11:31:47.4000202Z [0m[0m
+2025-11-25T11:31:47.6954415Z [31m
+2025-11-25T11:31:47.6959431Z [1m[31mError: [0m[0m[1mDuplicate local value definition[0m
+2025-11-25T11:31:47.6961069Z 
+2025-11-25T11:31:47.6963052Z [0m  on aks_komodor.tf line 2, in locals:
+2025-11-25T11:31:47.6963785Z    2: 	  [4maks_clusternames = { for k, v in local.aks_instances :[0m
+2025-11-25T11:31:47.6964157Z [0m   3: [4m		    k => (v.name == "" ?[0m
+2025-11-25T11:31:47.6964703Z [0m   4: [4m			      lower("aks-${local.basic["local"].env_short}-${local.basic["local"].region_short}-${v.numeric}")[0m
+2025-11-25T11:31:47.6965019Z [0m   5: [4m			      :[0m
+2025-11-25T11:31:47.6965649Z [0m   6: [4m			      lower("aks-${v.name}-${local.basic["local"].env_short}-${local.basic["local"].region_short}-${v.numeric}")[0m
+2025-11-25T11:31:47.6965958Z [0m   7: [4m		    )[0m
+2025-11-25T11:31:47.6966317Z [0m   8: [4m    }[0m
+2025-11-25T11:31:47.6966613Z [0m
+2025-11-25T11:31:47.6967057Z A local value named "aks_clusternames" was already defined at aks.tf:9,2-15,3.
+2025-11-25T11:31:47.6967407Z Local value names must be unique within a module.
+2025-11-25T11:31:47.6967711Z [0m[0m
+2025-11-25T11:31:47.6994605Z Terraform Plan Exit Code: 1
