@@ -1,0 +1,28 @@
+
+
+
+Error: Invalid function argument
+
+  on aks_komodor.tf line 41, in resource "helm_release" "komodor_agent":
+  41:     file("${path.module}/komodor/values-komodor.yaml")
+    |----------------
+    | path.module is "."
+
+Invalid value for "path" parameter: no file exists at
+komodor/values-komodor.yaml; this function works only with files that are
+distributed as part of the configuration source code, so if this file will be
+created by a resource in this configuration you must instead obtain this
+result from an attribute of that resource.
+
+
+Error: Reference to undeclared resource
+
+  on aks_komodor.tf line 45, in resource "helm_release" "komodor_agent":
+  45:     kubernetes_secret.komodor
+
+A managed resource "kubernetes_secret" "komodor" has not been declared in the
+root module.
+
+Terraform Plan Exit Code: 1
+
+##[error]Script failed with exit code: 1
