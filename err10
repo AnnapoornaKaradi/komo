@@ -1,0 +1,53 @@
+2025-11-28T12:03:10.0657560Z You may now begin working with Terraform. Try running "terraform plan" to see
+2025-11-28T12:03:10.0657933Z any changes that are required for your infrastructure. All Terraform commands
+2025-11-28T12:03:10.0658203Z should now work.
+2025-11-28T12:03:10.0658306Z 
+2025-11-28T12:03:10.0658657Z If you ever set or change modules or backend configuration for Terraform,
+2025-11-28T12:03:10.0659039Z rerun this command to reinitialize your working directory. If you forget, other
+2025-11-28T12:03:10.0659383Z commands will detect it and remind you to do so if necessary.[0m
+2025-11-28T12:03:24.4168653Z [31m
+2025-11-28T12:03:24.4169401Z [1m[31mError: [0m[0m[1mReference to undeclared resource[0m
+2025-11-28T12:03:24.4169493Z 
+2025-11-28T12:03:24.4169938Z [0m  on aks_komodor.tf line 11, in data "azurerm_key_vault_secret" "komodor_api_key":
+2025-11-28T12:03:24.4170378Z   11:   key_vault_id = [4mazurerm_key_vault.infra[0m[var.env_ref].id
+2025-11-28T12:03:24.4171195Z [0m
+2025-11-28T12:03:24.4171509Z A managed resource "azurerm_key_vault" "infra" has not been declared in the
+2025-11-28T12:03:24.4171725Z root module.
+2025-11-28T12:03:24.4171965Z [0m[0m
+2025-11-28T12:03:24.4180563Z [31m
+2025-11-28T12:03:24.4181061Z [1m[31mError: [0m[0m[1mInvalid resource type[0m
+2025-11-28T12:03:24.4181159Z 
+2025-11-28T12:03:24.4181769Z [0m  on aks_komodor.tf line 15, in resource "kubernetes_secrets" "komodor":
+2025-11-28T12:03:24.4182196Z   15: resource [4m"kubernetes_secrets"[0m "komodor" {
+2025-11-28T12:03:24.4182488Z [0m
+2025-11-28T12:03:24.4182824Z The provider provider.kubernetes does not support resource type
+2025-11-28T12:03:24.4183109Z "kubernetes_secrets".
+2025-11-28T12:03:24.4183443Z [0m[0m
+2025-11-28T12:03:24.4183721Z [31m
+2025-11-28T12:03:24.4184341Z [1m[31mError: [0m[0m[1mInvalid function argument[0m
+2025-11-28T12:03:24.4184456Z 
+2025-11-28T12:03:24.4184923Z [0m  on aks_komodor.tf line 41, in resource "helm_release" "komodor_agent":
+2025-11-28T12:03:24.4185329Z   41:     file("${[4mpath.module[0m}/komodor/values-komodor.yaml")
+2025-11-28T12:03:24.4185688Z [0m    [90m|----------------[0m
+2025-11-28T12:03:24.4186039Z [0m    [90m|[0m [1mpath.module[0m is "."[0m
+2025-11-28T12:03:24.4186316Z [0m
+2025-11-28T12:03:24.4186566Z Invalid value for "path" parameter: no file exists at
+2025-11-28T12:03:24.4187324Z komodor/values-komodor.yaml; this function works only with files that are
+2025-11-28T12:03:24.4187730Z distributed as part of the configuration source code, so if this file will be
+2025-11-28T12:03:24.4188863Z created by a resource in this configuration you must instead obtain this
+2025-11-28T12:03:24.4189193Z result from an attribute of that resource.
+2025-11-28T12:03:24.4189571Z [0m[0m
+2025-11-28T12:03:24.4204237Z [31m
+2025-11-28T12:03:24.4210042Z [1m[31mError: [0m[0m[1mReference to undeclared resource[0m
+2025-11-28T12:03:24.4210293Z 
+2025-11-28T12:03:24.4210800Z [0m  on aks_komodor.tf line 45, in resource "helm_release" "komodor_agent":
+2025-11-28T12:03:24.4211160Z   45:     [4mkubernetes_secret.komodor[0m
+2025-11-28T12:03:24.4211412Z [0m
+2025-11-28T12:03:24.4211723Z A managed resource "kubernetes_secret" "komodor" has not been declared in the
+2025-11-28T12:03:24.4211976Z root module.
+2025-11-28T12:03:24.4212267Z [0m[0m
+2025-11-28T12:03:24.4377648Z Terraform Plan Exit Code: 1
+2025-11-28T12:03:24.4395732Z 
+2025-11-28T12:03:24.4440777Z ##[error]Script failed with exit code: 1
+2025-11-28T12:03:24.4465017Z [command]/usr/local/bin/az account clear
+2025-11-28T12:03:25.3517780Z ##[section]Finishing: Terraform Plan
