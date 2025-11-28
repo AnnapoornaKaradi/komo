@@ -1,0 +1,54 @@
+locals {
+
+  region_short = local.basic["local"].region_short
+  kv_num = local.app_kv_numeric
+  kv_name = "kv-infra-${local.app_short}${local.my_env_short}-${local.region_short}-${local.kv_num}"
+  kv_rg = "rg-infra-${local.app_short}${local.my_env_short}-${local.region_short}-${local.kv_num}"
+  komodor_secret_name = "komodor-api-key"
+}
+for_each = local.aks_instances
+komodor_cluster_name = local.aks_clusternames[each.key]
+
+data "azurerm_key_vault" "komodor_kv"{
+  name = local.kv_name
+  key_vault_id = local.kv_rg
+}
+
+data "azurerm_key_vault_secret" "komodor-api-key"{
+  name = local.komodor_secret_name
+  key_vault_id = data.azurerm_key_vault.komodor_kv.id
+}
+
+
+resource "kubernetes_secrets" "komodor" {
+  metadata {
+    name      = "komodor-secrets"
+    namespace = "komodor"
+}
+  string_data = {
+    apiKey = data.azurerm_key_vault_secret.komodor_api_key.value
+  }
+   type = "Opaque"
+}
+
+# Install Komodor via Helm
+resource "helm_release" "komodor_agent" {
+  name       = "komodor-agent"
+  repository = "https://helm.komodor.io"
+  chart      = "komodorio/komodor-agent"
+  namespace  = "komodor"
+
+  set {
+    name  = "clusterName"
+    value = local.komodor_cluster_name
+  }
+
+  # Values file ensures API key comes from secret
+  values = [
+    file("${path.module}/helm_charts/komodor/values-komodor.yaml")
+  ]
+
+  depends_on = [
+    kubernetes_secret.komodor
+  ]
+}
