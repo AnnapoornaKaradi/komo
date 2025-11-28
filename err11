@@ -1,0 +1,40 @@
+2025-11-28T12:35:37.7962484Z [0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+2025-11-28T12:35:37.7963162Z [0m[32m
+2025-11-28T12:35:37.7963742Z You may now begin working with Terraform. Try running "terraform plan" to see
+2025-11-28T12:35:37.7964163Z any changes that are required for your infrastructure. All Terraform commands
+2025-11-28T12:35:37.7964737Z should now work.
+2025-11-28T12:35:37.7964828Z 
+2025-11-28T12:35:37.7965146Z If you ever set or change modules or backend configuration for Terraform,
+2025-11-28T12:35:37.7965437Z rerun this command to reinitialize your working directory. If you forget, other
+2025-11-28T12:35:37.7965695Z commands will detect it and remind you to do so if necessary.[0m
+2025-11-28T12:35:50.7307754Z [31m
+2025-11-28T12:35:50.7313619Z [1m[31mError: [0m[0m[1mReference to undeclared module[0m
+2025-11-28T12:35:50.7313740Z 
+2025-11-28T12:35:50.7314155Z [0m  on aks_komodor.tf line 7, in locals:
+2025-11-28T12:35:50.7314562Z    7:   kv_map = [4mmodule.key_vaults.key_vaults[0m
+2025-11-28T12:35:50.7314835Z [0m
+2025-11-28T12:35:50.7315127Z No module call named "key_vaults" is declared in the root module.
+2025-11-28T12:35:50.7315381Z [0m[0m
+2025-11-28T12:35:50.7315620Z [31m
+2025-11-28T12:35:50.7316011Z [1m[31mError: [0m[0m[1mInvalid resource type[0m
+2025-11-28T12:35:50.7316105Z 
+2025-11-28T12:35:50.7316543Z [0m  on aks_komodor.tf line 18, in resource "kubernetes_secrets" "komodor":
+2025-11-28T12:35:50.7316907Z   18: resource [4m"kubernetes_secrets"[0m "komodor" {
+2025-11-28T12:35:50.7318945Z [0m
+2025-11-28T12:35:50.7319351Z The provider provider.kubernetes does not support resource type
+2025-11-28T12:35:50.7319584Z "kubernetes_secrets".
+2025-11-28T12:35:50.7323697Z [0m[0m
+2025-11-28T12:35:50.7337334Z [31m
+2025-11-28T12:35:50.7345454Z [1m[31mError: [0m[0m[1mReference to undeclared resource[0m
+2025-11-28T12:35:50.7348651Z 
+2025-11-28T12:35:50.7349280Z [0m  on aks_komodor.tf line 47, in resource "helm_release" "komodor_agent":
+2025-11-28T12:35:50.7349670Z   47:     [4mkubernetes_secret.komodor[0m
+2025-11-28T12:35:50.7349977Z [0m
+2025-11-28T12:35:50.7350285Z A managed resource "kubernetes_secret" "komodor" has not been declared in the
+2025-11-28T12:35:50.7355665Z root module.
+2025-11-28T12:35:50.7356081Z [0m[0m
+2025-11-28T12:35:50.7490378Z Terraform Plan Exit Code: 1
+2025-11-28T12:35:50.7510433Z 
+2025-11-28T12:35:50.7550627Z ##[error]Script failed with exit code: 1
+2025-11-28T12:35:50.7571373Z [command]/usr/local/bin/az account clear
+2025-11-28T12:35:51.5920963Z ##[section]Finishing: Terraform Plan
