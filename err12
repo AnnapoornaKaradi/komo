@@ -1,0 +1,47 @@
+2025-11-28T13:00:13.7919934Z [1m[31mError: [0m[0m[1mReference to undeclared input variable[0m
+2025-11-28T13:00:13.7920544Z 
+2025-11-28T13:00:13.7921050Z [0m  on aks_komodor.tf line 3, in locals:
+2025-11-28T13:00:13.7921661Z    3:   komodor_cluster_name = try(local.aks_clusternames[var.env_ref], [4mvar.cluster_name[0m)
+2025-11-28T13:00:13.7921998Z [0m
+2025-11-28T13:00:13.7922360Z An input variable with the name "cluster_name" has not been declared. This
+2025-11-28T13:00:13.7922740Z variable can be declared with a variable "cluster_name" {} block.
+2025-11-28T13:00:13.7923038Z [0m[0m
+2025-11-28T13:00:13.7928037Z [31m
+2025-11-28T13:00:13.7928640Z [1m[31mError: [0m[0m[1mReference to undeclared input variable[0m
+2025-11-28T13:00:13.7928782Z 
+2025-11-28T13:00:13.7929256Z [0m  on aks_komodor.tf line 7, in locals:
+2025-11-28T13:00:13.7929710Z    7:   kv_resource_group = lookup([4mvar.kv_rg_map[0m, var.env_ref, local.fallback_kv_rg)
+2025-11-28T13:00:13.7929883Z [0m
+2025-11-28T13:00:13.7930073Z An input variable with the name "kv_rg_map" has not been declared. This
+2025-11-28T13:00:13.7930330Z variable can be declared with a variable "kv_rg_map" {} block.
+2025-11-28T13:00:13.7930538Z [0m[0m
+2025-11-28T13:00:13.7934968Z [31m
+2025-11-28T13:00:13.7935526Z [1m[31mError: [0m[0m[1mMissing required argument[0m
+2025-11-28T13:00:13.7935651Z 
+2025-11-28T13:00:13.7936179Z [0m  on aks_komodor.tf line 10, in data "azurerm_key_vault" "target":
+2025-11-28T13:00:13.7936675Z   10: data "azurerm_key_vault" "target"[4m{[0m
+2025-11-28T13:00:13.7937043Z [0m
+2025-11-28T13:00:13.7937438Z The argument "resource_group_name" is required, but no definition was found.
+2025-11-28T13:00:13.7937757Z [0m[0m
+2025-11-28T13:00:13.7941643Z [31m
+2025-11-28T13:00:13.7942308Z [1m[31mError: [0m[0m[1mUnsupported argument[0m
+2025-11-28T13:00:13.7942859Z 
+2025-11-28T13:00:13.7943772Z [0m  on aks_komodor.tf line 12, in data "azurerm_key_vault" "target":
+2025-11-28T13:00:13.7945270Z   12:   [4mkey_vault_id[0m = local.kv_resource_group
+2025-11-28T13:00:13.7945719Z [0m
+2025-11-28T13:00:13.7946340Z An argument named "key_vault_id" is not expected here.
+2025-11-28T13:00:13.7946878Z [0m[0m
+2025-11-28T13:00:13.7983561Z [31m
+2025-11-28T13:00:13.7986165Z [1m[31mError: [0m[0m[1mInvalid resource type[0m
+2025-11-28T13:00:13.7988575Z 
+2025-11-28T13:00:13.7990500Z [0m  on aks_komodor.tf line 21, in resource "kubernetes_secrets" "komodor":
+2025-11-28T13:00:13.7992320Z   21: resource [4m"kubernetes_secrets"[0m "komodor" {
+2025-11-28T13:00:13.7992731Z [0m
+2025-11-28T13:00:13.7993110Z The provider provider.kubernetes does not support resource type
+2025-11-28T13:00:13.7993416Z "kubernetes_secrets".
+2025-11-28T13:00:13.7993734Z [0m[0m
+2025-11-28T13:00:13.8136837Z Terraform Plan Exit Code: 1
+2025-11-28T13:00:13.8156250Z 
+2025-11-28T13:00:13.8206992Z ##[error]Script failed with exit code: 1
+2025-11-28T13:00:13.8227721Z [command]/usr/local/bin/az account clear
+2025-11-28T13:00:14.6437437Z ##[section]Finishing: Terraform Plan
