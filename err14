@@ -1,0 +1,39 @@
+2025-11-28T13:38:42.8816225Z [31m
+2025-11-28T13:38:42.8819134Z [1m[31mError: [0m[0m[1mMissing required argument[0m
+2025-11-28T13:38:42.8824655Z 
+2025-11-28T13:38:42.8826032Z [0m  on aks_komodor.tf line 10, in data "azurerm_key_vault" "target":
+2025-11-28T13:38:42.8826593Z   10: data "azurerm_key_vault" "target"[4m{[0m
+2025-11-28T13:38:42.8826869Z [0m
+2025-11-28T13:38:42.8827211Z The argument "resource_group_name" is required, but no definition was found.
+2025-11-28T13:38:42.8827621Z [0m[0m
+2025-11-28T13:38:42.8827999Z [31m
+2025-11-28T13:38:42.8828476Z [1m[31mError: [0m[0m[1mUnsupported argument[0m
+2025-11-28T13:38:42.8828627Z 
+2025-11-28T13:38:42.8829192Z [0m  on aks_komodor.tf line 12, in data "azurerm_key_vault" "target":
+2025-11-28T13:38:42.8829716Z   12:   [4mkey_vault_id[0m = local.kv_resource_group
+2025-11-28T13:38:42.8830067Z [0m
+2025-11-28T13:38:42.8830534Z An argument named "key_vault_id" is not expected here.
+2025-11-28T13:38:42.8830895Z [0m[0m
+2025-11-28T13:38:42.8832274Z [31m
+2025-11-28T13:38:42.8833400Z [1m[31mError: [0m[0m[1mInvalid resource type[0m
+2025-11-28T13:38:42.8833674Z 
+2025-11-28T13:38:42.8834372Z [0m  on aks_komodor.tf line 21, in resource "kubernetes_secrets" "komodor":
+2025-11-28T13:38:42.8834879Z   21: resource [4m"kubernetes_secrets"[0m "komodor" {
+2025-11-28T13:38:42.8835221Z [0m
+2025-11-28T13:38:42.8835546Z The provider provider.kubernetes does not support resource type
+2025-11-28T13:38:42.8836307Z "kubernetes_secrets".
+2025-11-28T13:38:42.8836712Z [0m[0m
+2025-11-28T13:38:42.8869550Z [31m
+2025-11-28T13:38:42.8872272Z [1m[31mError: [0m[0m[1mReference to undeclared resource[0m
+2025-11-28T13:38:42.8872444Z 
+2025-11-28T13:38:42.8872915Z [0m  on aks_komodor.tf line 50, in resource "helm_release" "komodor_agent":
+2025-11-28T13:38:42.8873685Z   50:     [4mkubernetes_secret.komodor[0m
+2025-11-28T13:38:42.8874183Z [0m
+2025-11-28T13:38:42.8874529Z A managed resource "kubernetes_secret" "komodor" has not been declared in the
+2025-11-28T13:38:42.8874807Z root module.
+2025-11-28T13:38:42.8875088Z [0m[0m
+2025-11-28T13:38:42.9046844Z Terraform Plan Exit Code: 1
+2025-11-28T13:38:42.9067440Z 
+2025-11-28T13:38:42.9115171Z ##[error]Script failed with exit code: 1
+2025-11-28T13:38:42.9137223Z [command]/usr/local/bin/az account clear
+2025-11-28T13:38:43.6693551Z ##[section]Finishing: Terraform Plan
