@@ -1,0 +1,7 @@
+data "azurerm_key_vault_secret" "linkerd_license_key" {
+	provider = azurerm.common
+	
+	name = "BuoyantLicense--Key"
+	key_vault_id = data.terraform_remote_state.common.outputs.key_vaults.infra.common["eus2"].id
+}
+
