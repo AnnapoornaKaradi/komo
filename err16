@@ -1,0 +1,40 @@
+2025-11-28T14:39:55.1044259Z [31m[0mThere are some problems with the configuration, described below.
+2025-11-28T14:39:55.1044647Z 
+2025-11-28T14:39:55.1045113Z The Terraform configuration must be valid before initialization so that
+2025-11-28T14:39:55.1045577Z Terraform can determine which modules and providers need to be installed.[0m[0m[0m
+2025-11-28T14:39:55.1046534Z [31m
+2025-11-28T14:39:55.1046905Z [1m[31mError: [0m[0m[1mUnsupported argument[0m
+2025-11-28T14:39:55.1047004Z 
+2025-11-28T14:39:55.1047315Z [0m  on aks_komodor.tf line 9:
+2025-11-28T14:39:55.1048009Z    9: [4mfor_each[0m = local.aks_instances
+2025-11-28T14:39:55.1048283Z [0m
+2025-11-28T14:39:55.1048998Z An argument named "for_each" is not expected here.
+2025-11-28T14:39:55.1049304Z [0m[0m
+2025-11-28T14:39:55.1049556Z [31m
+2025-11-28T14:39:55.1049919Z [1m[31mError: [0m[0m[1mUnsupported argument[0m
+2025-11-28T14:39:55.1050010Z 
+2025-11-28T14:39:55.1050343Z [0m  on aks_komodor.tf line 10:
+2025-11-28T14:39:55.1051249Z   10: [4mkomodor_cluster_name[0m = local.aks_clusternames[each.key]
+2025-11-28T14:39:55.1051548Z [0m
+2025-11-28T14:39:55.1052842Z An argument named "komodor_cluster_name" is not expected here.
+2025-11-28T14:39:55.1053238Z [0m[0m
+2025-11-28T14:39:55.4671562Z [31m
+2025-11-28T14:39:55.4673014Z [1m[31mError: [0m[0m[1mUnsupported argument[0m
+2025-11-28T14:39:55.4678783Z 
+2025-11-28T14:39:55.4679697Z [0m  on aks_komodor.tf line 9:
+2025-11-28T14:39:55.4680107Z    9: [4mfor_each[0m = local.aks_instances
+2025-11-28T14:39:55.4680384Z [0m
+2025-11-28T14:39:55.4680703Z An argument named "for_each" is not expected here.
+2025-11-28T14:39:55.4680981Z [0m[0m
+2025-11-28T14:39:55.4681692Z [31m
+2025-11-28T14:39:55.4682105Z [1m[31mError: [0m[0m[1mUnsupported argument[0m
+2025-11-28T14:39:55.4682258Z 
+2025-11-28T14:39:55.4682618Z [0m  on aks_komodor.tf line 10:
+2025-11-28T14:39:55.4683133Z   10: [4mkomodor_cluster_name[0m = local.aks_clusternames[each.key]
+2025-11-28T14:39:55.4683447Z [0m
+2025-11-28T14:39:55.4683754Z An argument named "komodor_cluster_name" is not expected here.
+2025-11-28T14:39:55.4684052Z [0m[0m
+2025-11-28T14:39:55.4745229Z Terraform Plan Exit Code: 1
+2025-11-28T14:39:55.4768830Z 
+2025-11-28T14:39:55.4859901Z ##[error]Script failed with exit code: 1
+2025-11-28T14:39:55.4909537Z [command]/usr/local/bin/az account clear
