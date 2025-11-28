@@ -1,0 +1,34 @@
+2025-11-28T13:19:23.2940880Z [0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+2025-11-28T13:19:23.2941200Z [0m[32m
+2025-11-28T13:19:23.2941529Z You may now begin working with Terraform. Try running "terraform plan" to see
+2025-11-28T13:19:23.2941868Z any changes that are required for your infrastructure. All Terraform commands
+2025-11-28T13:19:23.2942134Z should now work.
+2025-11-28T13:19:23.2942222Z 
+2025-11-28T13:19:23.2942540Z If you ever set or change modules or backend configuration for Terraform,
+2025-11-28T13:19:23.2946518Z rerun this command to reinitialize your working directory. If you forget, other
+2025-11-28T13:19:23.2948297Z commands will detect it and remind you to do so if necessary.[0m
+2025-11-28T13:19:26.9869738Z [31m
+2025-11-28T13:19:26.9872710Z [1m[31mError: [0m[0m[1mNo value for required variable[0m
+2025-11-28T13:19:26.9872883Z 
+2025-11-28T13:19:26.9873355Z [0m  on variablesfcbbb19b-a181-4c37-8d34-82053b6320b9.pipeline_copied.tf line 9:
+2025-11-28T13:19:26.9873736Z    9: [4mvariable "cluster_name"[0m { type = string }
+2025-11-28T13:19:26.9874007Z [0m
+2025-11-28T13:19:26.9874285Z The root module input variable "cluster_name" is not set, and has no default
+2025-11-28T13:19:26.9874583Z value. Use a -var or -var-file command line argument to provide a value for
+2025-11-28T13:19:26.9874818Z this variable.
+2025-11-28T13:19:26.9875094Z [0m[0m
+2025-11-28T13:19:26.9905133Z [31m
+2025-11-28T13:19:26.9915643Z [1m[31mError: [0m[0m[1mNo value for required variable[0m
+2025-11-28T13:19:26.9916509Z 
+2025-11-28T13:19:26.9930042Z [0m  on variablesfcbbb19b-a181-4c37-8d34-82053b6320b9.pipeline_copied.tf line 15:
+2025-11-28T13:19:26.9930836Z   15: [4mvariable "kv_rg_map"[0m { type = map(string) }
+2025-11-28T13:19:26.9931268Z [0m
+2025-11-28T13:19:26.9931588Z The root module input variable "kv_rg_map" is not set, and has no default
+2025-11-28T13:19:26.9931952Z value. Use a -var or -var-file command line argument to provide a value for
+2025-11-28T13:19:26.9932221Z this variable.
+2025-11-28T13:19:26.9932539Z [0m[0m
+2025-11-28T13:19:26.9966835Z Terraform Plan Exit Code: 1
+2025-11-28T13:19:26.9988445Z 
+2025-11-28T13:19:27.0042578Z ##[error]Script failed with exit code: 1
+2025-11-28T13:19:27.0064018Z [command]/usr/local/bin/az account clear
+2025-11-28T13:19:27.8683882Z ##[section]Finishing: Terraform Plan
