@@ -1,0 +1,39 @@
+
+data "azurerm_key_vault_secret" "komodor-api-key"{
+  name = "komodor-api-key"
+  key_vault_id = data.terraform_remote_state.baseinfra_00["local"].outputs.key_vaults.env["infra"].id
+}
+
+
+resource "kubernetes_secrets" "komodor" {
+  metadata {
+    name      = "komodor-secrets"
+    namespace = "komodor"
+}
+  string_data = {
+    apiKey = data.azurerm_key_vault_secret.komodor-api-key.value
+  }
+   type = "Opaque"
+}
+
+# Install Komodor via Helm
+resource "helm_release" "komodor_agent" {
+  name       = "komodor-agent"
+  repository = "https://helm.komodor.io"
+  chart      = "komodorio/komodor-agent"
+  namespace  = "komodor"
+
+  set {
+    name  = "clusterName"
+    value = local.komodor_cluster_name
+  }
+
+  # Values file ensures API key comes from secret
+  values = [
+    file("${path.module}/helm_charts/komodor/values-komodor.yaml")
+  ]
+
+  depends_on = [
+    kubernetes_secret.komodor                                                                             
+  ]
+}
