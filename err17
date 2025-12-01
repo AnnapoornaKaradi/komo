@@ -1,0 +1,25 @@
+2025-12-01T09:55:53.0643407Z [31m
+2025-12-01T09:55:53.0643840Z [1m[31mError: [0m[0m[1mInvalid expression[0m
+2025-12-01T09:55:53.0643954Z 
+2025-12-01T09:55:53.0644444Z [0m  on aks_komodor.tf line 52, in resource "helm_release" "komodor_agent":
+2025-12-01T09:55:53.0644895Z   52:     [4mkubernetes_secret.komodor[each.key][0m
+2025-12-01T09:55:53.0645200Z [0m
+2025-12-01T09:55:53.0645982Z A single static variable reference is required: only attribute access and
+2025-12-01T09:55:53.0646333Z indexing with constant keys. No calculations, function calls, template
+2025-12-01T09:55:53.0646771Z expressions, etc are allowed here.
+2025-12-01T09:55:53.0647092Z [0m[0m
+2025-12-01T09:55:53.3482792Z [31m
+2025-12-01T09:55:53.3484054Z [1m[31mError: [0m[0m[1mInvalid expression[0m
+2025-12-01T09:55:53.3484369Z 
+2025-12-01T09:55:53.3485481Z [0m  on aks_komodor.tf line 52, in resource "helm_release" "komodor_agent":
+2025-12-01T09:55:53.3486015Z   52:     [4mkubernetes_secret.komodor[each.key][0m
+2025-12-01T09:55:53.3486355Z [0m
+2025-12-01T09:55:53.3486954Z A single static variable reference is required: only attribute access and
+2025-12-01T09:55:53.3487377Z indexing with constant keys. No calculations, function calls, template
+2025-12-01T09:55:53.3487644Z expressions, etc are allowed here.
+2025-12-01T09:55:53.3487826Z [0m[0m
+2025-12-01T09:55:53.3518235Z Terraform Plan Exit Code: 1
+2025-12-01T09:55:53.3531191Z 
+2025-12-01T09:55:53.3587178Z ##[error]Script failed with exit code: 1
+2025-12-01T09:55:53.3606224Z [command]/usr/local/bin/az account clear
+2025-12-01T09:55:54.2665717Z ##[section]Finishing: Terraform Plan
