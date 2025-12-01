@@ -1,0 +1,74 @@
+2025-12-01T17:05:24.7156862Z commands will detect it and remind you to do so if necessary.[0m
+2025-12-01T17:05:36.2988634Z [31m
+2025-12-01T17:05:36.2993148Z [1m[31mError: [0m[0m[1mMissing resource instance key[0m
+2025-12-01T17:05:36.2993294Z 
+2025-12-01T17:05:36.2999406Z [0m  on komodor.tf line 8, in data "azurerm_key_vault_secret" "komodor_api_key":
+2025-12-01T17:05:36.3003620Z    8:       [4mdata.terraform_remote_state.baseinfra_00[0m.outputs.key_vaults["env"][var.env_ref]["id"],
+2025-12-01T17:05:36.3004815Z [0m
+2025-12-01T17:05:36.3005254Z Because data.terraform_remote_state.baseinfra_00 has "for_each" set, its
+2025-12-01T17:05:36.3005868Z attributes must be accessed on specific instances.
+2025-12-01T17:05:36.3005972Z 
+2025-12-01T17:05:36.3006859Z For example, to correlate with indices of a referring resource, use:
+2025-12-01T17:05:36.3007403Z     data.terraform_remote_state.baseinfra_00[each.key]
+2025-12-01T17:05:36.3007758Z [0m[0m
+2025-12-01T17:05:36.3008264Z [31m
+2025-12-01T17:05:36.3008714Z [1m[31mError: [0m[0m[1mMissing resource instance key[0m
+2025-12-01T17:05:36.3008986Z 
+2025-12-01T17:05:36.3009515Z [0m  on komodor.tf line 9, in data "azurerm_key_vault_secret" "komodor_api_key":
+2025-12-01T17:05:36.3010272Z    9:       [4mdata.terraform_remote_state.baseinfra_00[0m.outputs.key_vaults[var.env_ref]["id"],
+2025-12-01T17:05:36.3010791Z [0m
+2025-12-01T17:05:36.3011083Z Because data.terraform_remote_state.baseinfra_00 has "for_each" set, its
+2025-12-01T17:05:36.3011623Z attributes must be accessed on specific instances.
+2025-12-01T17:05:36.3011737Z 
+2025-12-01T17:05:36.3012899Z For example, to correlate with indices of a referring resource, use:
+2025-12-01T17:05:36.3018960Z     data.terraform_remote_state.baseinfra_00[each.key]
+2025-12-01T17:05:36.3019962Z [0m[0m
+2025-12-01T17:05:36.3021432Z [31m
+2025-12-01T17:05:36.3022180Z [1m[31mError: [0m[0m[1mMissing resource instance key[0m
+2025-12-01T17:05:36.3022261Z 
+2025-12-01T17:05:36.3022767Z [0m  on komodor.tf line 16, in locals:
+2025-12-01T17:05:36.3023266Z   16:         [4mdata.terraform_remote_state.baseinfra_00[0m.outputs.aks_clusters[var.env_ref]["name"],
+2025-12-01T17:05:36.3023692Z [0m
+2025-12-01T17:05:36.3023953Z Because data.terraform_remote_state.baseinfra_00 has "for_each" set, its
+2025-12-01T17:05:36.3024244Z attributes must be accessed on specific instances.
+2025-12-01T17:05:36.3024352Z 
+2025-12-01T17:05:36.3029762Z For example, to correlate with indices of a referring resource, use:
+2025-12-01T17:05:36.3030136Z     data.terraform_remote_state.baseinfra_00[each.key]
+2025-12-01T17:05:36.3030503Z [0m[0m
+2025-12-01T17:05:36.3030971Z [31m
+2025-12-01T17:05:36.3031458Z [1m[31mError: [0m[0m[1mMissing resource instance key[0m
+2025-12-01T17:05:36.3031555Z 
+2025-12-01T17:05:36.3031753Z [0m  on komodor.tf line 17, in locals:
+2025-12-01T17:05:36.3032013Z   17:         [4mdata.terraform_remote_state.baseinfra_00[0m.outputs.key_vaults[var.env_ref],
+2025-12-01T17:05:36.3032142Z [0m
+2025-12-01T17:05:36.3032291Z Because data.terraform_remote_state.baseinfra_00 has "for_each" set, its
+2025-12-01T17:05:36.3032578Z attributes must be accessed on specific instances.
+2025-12-01T17:05:36.3032669Z 
+2025-12-01T17:05:36.3032977Z For example, to correlate with indices of a referring resource, use:
+2025-12-01T17:05:36.3033536Z     data.terraform_remote_state.baseinfra_00[each.key]
+2025-12-01T17:05:36.3033840Z [0m[0m
+2025-12-01T17:05:36.3038497Z [31m
+2025-12-01T17:05:36.3038966Z [1m[31mError: [0m[0m[1mMissing resource instance key[0m
+2025-12-01T17:05:36.3039074Z 
+2025-12-01T17:05:36.3039419Z [0m  on komodor.tf line 18, in locals:
+2025-12-01T17:05:36.3039998Z   18:         [4mdata.terraform_remote_state.baseinfra_00[0m.outputs.key_vaults[var.env_ref]["clusterName"],
+2025-12-01T17:05:36.3040247Z [0m
+2025-12-01T17:05:36.3040891Z Because data.terraform_remote_state.baseinfra_00 has "for_each" set, its
+2025-12-01T17:05:36.3041897Z attributes must be accessed on specific instances.
+2025-12-01T17:05:36.3042039Z 
+2025-12-01T17:05:36.3042378Z For example, to correlate with indices of a referring resource, use:
+2025-12-01T17:05:36.3043985Z     data.terraform_remote_state.baseinfra_00[each.key]
+2025-12-01T17:05:36.3044371Z [0m[0m
+2025-12-01T17:05:36.3050332Z [31m
+2025-12-01T17:05:36.3052376Z [1m[31mError: [0m[0m[1mInvalid reference[0m
+2025-12-01T17:05:36.3052693Z 
+2025-12-01T17:05:36.3061305Z [0m  on komodor.tf line 26, in resource "kubernetes_secret" "komodor":
+2025-12-01T17:05:36.3061793Z   26:       namespace = [4mkomodor[0m
+2025-12-01T17:05:36.3077378Z [0m
+2025-12-01T17:05:36.3111474Z A reference to a resource type must be followed by at least one attribute
+2025-12-01T17:05:36.3112115Z access, specifying the resource name.
+2025-12-01T17:05:36.3112714Z [0m[0m
+2025-12-01T17:05:36.3252339Z Terraform Plan Exit Code: 1
+2025-12-01T17:05:36.3271543Z 
+2025-12-01T17:05:36.3320757Z ##[error]Script failed with exit code: 1
+2025-12-01T17:05:36.3339164Z [command]/usr/local/bin/az account clear
