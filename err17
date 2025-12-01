@@ -1,4 +1,234 @@
-025-12-01T10:24:40.2279154Z [1m[31mError: [0m[0m[1mReference to undeclared local value[0m
+2025-12-01T10:23:13.0018599Z ##[section]Starting: Terraform Plan
+2025-12-01T10:23:13.0026094Z ==============================================================================
+2025-12-01T10:23:13.0026177Z Task         : Azure CLI
+2025-12-01T10:23:13.0026256Z Description  : Run Azure CLI commands against an Azure subscription in a PowerShell Core/Shell script when running on Linux agent or PowerShell/PowerShell Core/Batch script when running on Windows agent.
+2025-12-01T10:23:13.0026357Z Version      : 2.262.1
+2025-12-01T10:23:13.0026423Z Author       : Microsoft Corporation
+2025-12-01T10:23:13.0026475Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/deploy/azure-cli
+2025-12-01T10:23:13.0026526Z ==============================================================================
+2025-12-01T10:23:15.5723729Z [command]/usr/local/bin/az version
+2025-12-01T10:23:42.1744608Z {
+2025-12-01T10:23:42.1745005Z   "azure-cli": "2.76.0",
+2025-12-01T10:23:42.1745307Z   "azure-cli-core": "2.76.0",
+2025-12-01T10:23:42.1777885Z   "azure-cli-telemetry": "1.1.0",
+2025-12-01T10:23:42.1778328Z   "extensions": {}
+2025-12-01T10:23:42.1778594Z }
+2025-12-01T10:23:42.1779355Z Setting AZURE_CONFIG_DIR env variable to: /agent/_work/_temp/.azclitask
+2025-12-01T10:23:42.1788676Z Setting active cloud to: AzureCloud
+2025-12-01T10:23:42.1792750Z [command]/usr/local/bin/az cloud set -n AzureCloud
+2025-12-01T10:23:44.8400397Z [command]/usr/local/bin/az login --service-principal -u *** --password=*** --tenant 8a807b9b-02da-47f3-a903-791a42a2285c --allow-no-subscriptions
+2025-12-01T10:23:45.7187285Z [
+2025-12-01T10:23:45.7191617Z   {
+2025-12-01T10:23:45.7192515Z     "cloudName": "AzureCloud",
+2025-12-01T10:23:45.7193486Z     "homeTenantId": "8a807b9b-02da-47f3-a903-791a42a2285c",
+2025-12-01T10:23:45.7193861Z     "id": "8d1a8329-ea90-46a3-b900-8676c42ed761",
+2025-12-01T10:23:45.7194292Z     "isDefault": true,
+2025-12-01T10:23:45.7195113Z     "managedByTenants": [],
+2025-12-01T10:23:45.7195390Z     "name": "SL-EXOS-Sandbox-01",
+2025-12-01T10:23:45.7195751Z     "state": "Enabled",
+2025-12-01T10:23:45.7196094Z     "tenantId": "8a807b9b-02da-47f3-a903-791a42a2285c",
+2025-12-01T10:23:45.7196335Z     "user": {
+2025-12-01T10:23:45.7196773Z       "name": "***",
+2025-12-01T10:23:45.7197042Z       "type": "servicePrincipal"
+2025-12-01T10:23:45.7197244Z     }
+2025-12-01T10:23:45.7197462Z   },
+2025-12-01T10:23:45.7197680Z   {
+2025-12-01T10:23:45.7197943Z     "cloudName": "AzureCloud",
+2025-12-01T10:23:45.7198291Z     "homeTenantId": "8a807b9b-02da-47f3-a903-791a42a2285c",
+2025-12-01T10:23:45.7198580Z     "id": "c48f5cd5-8dd0-4eaa-b46e-a351002cdabd",
+2025-12-01T10:23:45.7199013Z     "isDefault": false,
+2025-12-01T10:23:45.7199263Z     "managedByTenants": [
+2025-12-01T10:23:45.7199518Z       {
+2025-12-01T10:23:45.7199820Z         "tenantId": "2f4a9838-26b7-47ee-be60-ccc1fdec5953"
+2025-12-01T10:23:45.7200049Z       }
+2025-12-01T10:23:45.7200272Z     ],
+2025-12-01T10:23:45.7200533Z     "name": "FNF-Prod-01",
+2025-12-01T10:23:45.7200770Z     "state": "Enabled",
+2025-12-01T10:23:45.7201091Z     "tenantId": "8a807b9b-02da-47f3-a903-791a42a2285c",
+2025-12-01T10:23:45.7201319Z     "user": {
+2025-12-01T10:23:45.7201655Z       "name": "***",
+2025-12-01T10:23:45.7201919Z       "type": "servicePrincipal"
+2025-12-01T10:23:45.7202124Z     }
+2025-12-01T10:23:45.7202360Z   },
+2025-12-01T10:23:45.7202595Z   {
+2025-12-01T10:23:45.7202862Z     "cloudName": "AzureCloud",
+2025-12-01T10:23:45.7203165Z     "homeTenantId": "8a807b9b-02da-47f3-a903-791a42a2285c",
+2025-12-01T10:23:45.7203497Z     "id": "a2ca26b7-774e-4207-801a-c45151ff310d",
+2025-12-01T10:23:45.7204226Z     "isDefault": false,
+2025-12-01T10:23:45.7204510Z     "managedByTenants": [],
+2025-12-01T10:23:45.7206720Z     "name": "SL-EXOS-ReleaseMGMT-01",
+2025-12-01T10:23:45.7206989Z     "state": "Enabled",
+2025-12-01T10:23:45.7207294Z     "tenantId": "8a807b9b-02da-47f3-a903-791a42a2285c",
+2025-12-01T10:23:45.7207523Z     "user": {
+2025-12-01T10:23:45.7207879Z       "name": "***",
+2025-12-01T10:23:45.7208127Z       "type": "servicePrincipal"
+2025-12-01T10:23:45.7225247Z     }
+2025-12-01T10:23:45.7225489Z   },
+2025-12-01T10:23:45.7225694Z   {
+2025-12-01T10:23:45.7225950Z     "cloudName": "AzureCloud",
+2025-12-01T10:23:45.7226236Z     "homeTenantId": "8a807b9b-02da-47f3-a903-791a42a2285c",
+2025-12-01T10:23:45.7226637Z     "id": "a8848682-e805-4487-827f-a4888431a5ad",
+2025-12-01T10:23:45.7226894Z     "isDefault": false,
+2025-12-01T10:23:45.7227156Z     "managedByTenants": [],
+2025-12-01T10:23:45.7227402Z     "name": "FNF-ENT-01",
+2025-12-01T10:23:45.7227633Z     "state": "Enabled",
+2025-12-01T10:23:45.7227905Z     "tenantId": "8a807b9b-02da-47f3-a903-791a42a2285c",
+2025-12-01T10:23:45.7228113Z     "user": {
+2025-12-01T10:23:45.7228442Z       "name": "***",
+2025-12-01T10:23:45.7228664Z       "type": "servicePrincipal"
+2025-12-01T10:23:45.7229017Z     }
+2025-12-01T10:23:45.7229230Z   }
+2025-12-01T10:23:45.7229443Z ]
+2025-12-01T10:23:45.7229772Z [command]/usr/local/bin/az account set --subscription 8d1a8329-ea90-46a3-b900-8676c42ed761
+2025-12-01T10:23:46.1774735Z [command]/usr/bin/bash /agent/_work/1/BaseInfra_Build/PipelineTemplates/scripts/terraform_plan.sh
+2025-12-01T10:23:54.2815726Z Terraform v0.14.11
+2025-12-01T10:23:54.2816539Z 
+2025-12-01T10:23:54.2817401Z Your version of Terraform is out of date! The latest version
+2025-12-01T10:23:54.2819535Z is 1.14.0. You can update by downloading from https://www.terraform.io/downloads.html
+2025-12-01T10:24:04.9472635Z [
+2025-12-01T10:24:04.9476629Z   {
+2025-12-01T10:24:04.9477272Z     "cloudName": "AzureCloud",
+2025-12-01T10:24:04.9478518Z     "homeTenantId": "8a807b9b-02da-47f3-a903-791a42a2285c",
+2025-12-01T10:24:04.9479464Z     "id": "8d1a8329-ea90-46a3-b900-8676c42ed761",
+2025-12-01T10:24:04.9479892Z     "isDefault": true,
+2025-12-01T10:24:04.9480382Z     "managedByTenants": [],
+2025-12-01T10:24:04.9481155Z     "name": "SL-EXOS-Sandbox-01",
+2025-12-01T10:24:04.9481648Z     "state": "Enabled",
+2025-12-01T10:24:04.9482207Z     "tenantId": "8a807b9b-02da-47f3-a903-791a42a2285c",
+2025-12-01T10:24:04.9482780Z     "user": {
+2025-12-01T10:24:04.9483464Z       "name": "***",
+2025-12-01T10:24:04.9484090Z       "type": "servicePrincipal"
+2025-12-01T10:24:04.9486354Z     }
+2025-12-01T10:24:04.9489320Z   },
+2025-12-01T10:24:04.9489959Z   {
+2025-12-01T10:24:04.9490498Z     "cloudName": "AzureCloud",
+2025-12-01T10:24:04.9493878Z     "homeTenantId": "8a807b9b-02da-47f3-a903-791a42a2285c",
+2025-12-01T10:24:04.9494186Z     "id": "c48f5cd5-8dd0-4eaa-b46e-a351002cdabd",
+2025-12-01T10:24:04.9494427Z     "isDefault": false,
+2025-12-01T10:24:04.9494670Z     "managedByTenants": [
+2025-12-01T10:24:04.9494894Z       {
+2025-12-01T10:24:04.9495183Z         "tenantId": "2f4a9838-26b7-47ee-be60-ccc1fdec5953"
+2025-12-01T10:24:04.9495383Z       }
+2025-12-01T10:24:04.9495618Z     ],
+2025-12-01T10:24:04.9495873Z     "name": "FNF-Prod-01",
+2025-12-01T10:24:04.9496126Z     "state": "Enabled",
+2025-12-01T10:24:04.9496421Z     "tenantId": "8a807b9b-02da-47f3-a903-791a42a2285c",
+2025-12-01T10:24:04.9496664Z     "user": {
+2025-12-01T10:24:04.9497035Z       "name": "***",
+2025-12-01T10:24:04.9497309Z       "type": "servicePrincipal"
+2025-12-01T10:24:04.9497526Z     }
+2025-12-01T10:24:04.9497739Z   },
+2025-12-01T10:24:04.9497957Z   {
+2025-12-01T10:24:04.9498190Z     "cloudName": "AzureCloud",
+2025-12-01T10:24:04.9498461Z     "homeTenantId": "8a807b9b-02da-47f3-a903-791a42a2285c",
+2025-12-01T10:24:04.9498711Z     "id": "a2ca26b7-774e-4207-801a-c45151ff310d",
+2025-12-01T10:24:04.9499081Z     "isDefault": false,
+2025-12-01T10:24:04.9499295Z     "managedByTenants": [],
+2025-12-01T10:24:04.9499542Z     "name": "SL-EXOS-ReleaseMGMT-01",
+2025-12-01T10:24:04.9499785Z     "state": "Enabled",
+2025-12-01T10:24:04.9500029Z     "tenantId": "8a807b9b-02da-47f3-a903-791a42a2285c",
+2025-12-01T10:24:04.9500214Z     "user": {
+2025-12-01T10:24:04.9500518Z       "name": "***",
+2025-12-01T10:24:04.9500750Z       "type": "servicePrincipal"
+2025-12-01T10:24:04.9501181Z     }
+2025-12-01T10:24:04.9501381Z   },
+2025-12-01T10:24:04.9501567Z   {
+2025-12-01T10:24:04.9501786Z     "cloudName": "AzureCloud",
+2025-12-01T10:24:04.9502387Z     "homeTenantId": "8a807b9b-02da-47f3-a903-791a42a2285c",
+2025-12-01T10:24:04.9502631Z     "id": "a8848682-e805-4487-827f-a4888431a5ad",
+2025-12-01T10:24:04.9502857Z     "isDefault": false,
+2025-12-01T10:24:04.9503093Z     "managedByTenants": [],
+2025-12-01T10:24:04.9503325Z     "name": "FNF-ENT-01",
+2025-12-01T10:24:04.9503553Z     "state": "Enabled",
+2025-12-01T10:24:04.9503836Z     "tenantId": "8a807b9b-02da-47f3-a903-791a42a2285c",
+2025-12-01T10:24:04.9504061Z     "user": {
+2025-12-01T10:24:04.9504375Z       "name": "***",
+2025-12-01T10:24:04.9504608Z       "type": "servicePrincipal"
+2025-12-01T10:24:04.9504792Z     }
+2025-12-01T10:24:04.9504985Z   }
+2025-12-01T10:24:04.9505176Z ]
+2025-12-01T10:24:13.1851923Z [0m[1mInitializing modules...[0m
+2025-12-01T10:24:13.3966659Z - dns_vm_v2 in dns_vm
+2025-12-01T10:24:13.4283585Z 
+2025-12-01T10:24:13.4285422Z [0m[1mInitializing the backend...[0m
+2025-12-01T10:24:13.4332118Z [0m[32m
+2025-12-01T10:24:13.4333932Z Successfully configured the backend "azurerm"! Terraform will automatically
+2025-12-01T10:24:13.4334729Z use this backend unless the backend configuration changes.[0m
+2025-12-01T10:24:14.2160789Z 
+2025-12-01T10:24:14.2162115Z [0m[1mInitializing provider plugins...[0m
+2025-12-01T10:24:14.2162573Z - terraform.io/builtin/terraform is built in to Terraform
+2025-12-01T10:24:14.2162910Z - Finding hashicorp/random versions matching "~> 3.4.1"...
+2025-12-01T10:24:14.3620765Z - Finding hashicorp/null versions matching "~> 3.1"...
+2025-12-01T10:24:14.3880615Z - Finding hashicorp/time versions matching "~> 0.5"...
+2025-12-01T10:24:14.4113820Z - Finding hashicorp/external versions matching "~> 2.1"...
+2025-12-01T10:24:14.4350534Z - Finding hashicorp/azurerm versions matching "~> 3.117.0"...
+2025-12-01T10:24:14.4725723Z - Finding hashicorp/dns versions matching "~> 3.2"...
+2025-12-01T10:24:14.4961927Z - Finding hashicorp/helm versions matching "~> 2.16.0"...
+2025-12-01T10:24:14.5229438Z - Finding hashicorp/azuread versions matching "~> 2.46.0"...
+2025-12-01T10:24:14.5495194Z - Finding hashicorp/local versions matching "~> 2.1"...
+2025-12-01T10:24:14.5751079Z - Finding azure/azapi versions matching "~> 1.12.0"...
+2025-12-01T10:24:14.6022778Z - Finding hashicorp/tls versions matching "~> 3.4.0"...
+2025-12-01T10:24:14.6271691Z - Finding chilicat/pkcs12 versions matching "~> 0.2.5"...
+2025-12-01T10:24:14.6625338Z - Finding mastercard/restapi versions matching "1.20.0"...
+2025-12-01T10:24:14.6967551Z - Finding hashicorp/kubernetes versions matching "~> 2.17"...
+2025-12-01T10:24:14.8275175Z - Installing hashicorp/local v2.6.1...
+2025-12-01T10:24:15.2000265Z - Installed hashicorp/local v2.6.1 (signed by HashiCorp)
+2025-12-01T10:24:15.2861612Z - Installing hashicorp/tls v3.4.0...
+2025-12-01T10:24:15.6274750Z - Installed hashicorp/tls v3.4.0 (signed by HashiCorp)
+2025-12-01T10:24:15.8904939Z - Installing chilicat/pkcs12 v0.2.5...
+2025-12-01T10:24:16.3148424Z - Installed chilicat/pkcs12 v0.2.5 (self-signed, key ID [0m[1mCD8E3D0A556B64E3[0m[0m)
+2025-12-01T10:24:16.4115635Z - Installing hashicorp/random v3.4.3...
+2025-12-01T10:24:16.7317007Z - Installed hashicorp/random v3.4.3 (signed by HashiCorp)
+2025-12-01T10:24:16.8164871Z - Installing hashicorp/helm v2.16.1...
+2025-12-01T10:24:17.7554883Z - Installed hashicorp/helm v2.16.1 (signed by HashiCorp)
+2025-12-01T10:24:17.8539167Z - Installing hashicorp/azuread v2.46.0...
+2025-12-01T10:24:18.2803190Z - Installed hashicorp/azuread v2.46.0 (signed by HashiCorp)
+2025-12-01T10:24:18.3850740Z - Installing hashicorp/null v3.2.4...
+2025-12-01T10:24:18.7289978Z - Installed hashicorp/null v3.2.4 (signed by HashiCorp)
+2025-12-01T10:24:18.8146351Z - Installing hashicorp/external v2.3.5...
+2025-12-01T10:24:19.1659557Z - Installed hashicorp/external v2.3.5 (signed by HashiCorp)
+2025-12-01T10:24:19.2609153Z - Installing hashicorp/azurerm v3.117.1...
+2025-12-01T10:24:22.4511065Z - Installed hashicorp/azurerm v3.117.1 (signed by HashiCorp)
+2025-12-01T10:24:22.5377582Z - Installing hashicorp/dns v3.4.3...
+2025-12-01T10:24:22.9633690Z - Installed hashicorp/dns v3.4.3 (signed by HashiCorp)
+2025-12-01T10:24:23.2396656Z - Installing azure/azapi v1.12.1...
+2025-12-01T10:24:24.7665569Z - Installed azure/azapi v1.12.1 (signed by a HashiCorp partner, key ID [0m[1m6F0B91BDE98478CF[0m[0m)
+2025-12-01T10:24:25.0543826Z - Installing mastercard/restapi v1.20.0...
+2025-12-01T10:24:25.5053898Z - Installed mastercard/restapi v1.20.0 (self-signed, key ID [0m[1mDCB8C431D71C30AB[0m[0m)
+2025-12-01T10:24:25.5930244Z - Installing hashicorp/kubernetes v2.38.0...
+2025-12-01T10:24:26.4896148Z - Installed hashicorp/kubernetes v2.38.0 (signed by HashiCorp)
+2025-12-01T10:24:26.5797697Z - Installing hashicorp/time v0.13.1...
+2025-12-01T10:24:26.9455583Z - Installed hashicorp/time v0.13.1 (signed by HashiCorp)
+2025-12-01T10:24:26.9460264Z 
+2025-12-01T10:24:26.9460842Z Partner and community providers are signed by their developers.
+2025-12-01T10:24:26.9461288Z If you'd like to know more about provider signing, you can read about it here:
+2025-12-01T10:24:26.9461597Z https://www.terraform.io/docs/cli/plugins/signing.html
+2025-12-01T10:24:26.9461694Z 
+2025-12-01T10:24:26.9462992Z Terraform has created a lock file [1m.terraform.lock.hcl[0m to record the provider
+2025-12-01T10:24:26.9463355Z selections it made above. Include this file in your version control repository
+2025-12-01T10:24:26.9466453Z so that Terraform can guarantee to make the same selections by default when
+2025-12-01T10:24:26.9474706Z you run "terraform init" in the future.[0m
+2025-12-01T10:24:26.9474979Z 
+2025-12-01T10:24:26.9475629Z [0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+2025-12-01T10:24:26.9475992Z [0m[32m
+2025-12-01T10:24:26.9476389Z You may now begin working with Terraform. Try running "terraform plan" to see
+2025-12-01T10:24:26.9476766Z any changes that are required for your infrastructure. All Terraform commands
+2025-12-01T10:24:26.9477029Z should now work.
+2025-12-01T10:24:26.9477126Z 
+2025-12-01T10:24:26.9477418Z If you ever set or change modules or backend configuration for Terraform,
+2025-12-01T10:24:26.9477713Z rerun this command to reinitialize your working directory. If you forget, other
+2025-12-01T10:24:26.9477964Z commands will detect it and remind you to do so if necessary.[0m
+2025-12-01T10:24:40.2272764Z [31m
+2025-12-01T10:24:40.2273269Z [1m[31mError: [0m[0m[1mInvalid resource type[0m
+2025-12-01T10:24:40.2273405Z 
+2025-12-01T10:24:40.2273869Z [0m  on aks_komodor.tf line 21, in resource "kubernetes_secrets" "komodor":
+2025-12-01T10:24:40.2274314Z   21: resource [4m"kubernetes_secrets"[0m "komodor" {
+2025-12-01T10:24:40.2274610Z [0m
+2025-12-01T10:24:40.2274953Z The provider provider.kubernetes does not support resource type
+2025-12-01T10:24:40.2275202Z "kubernetes_secrets".
+2025-12-01T10:24:40.2275441Z [0m[0m
+2025-12-01T10:24:40.2278417Z [31m
+2025-12-01T10:24:40.2279154Z [1m[31mError: [0m[0m[1mReference to undeclared local value[0m
 2025-12-01T10:24:40.2279266Z 
 2025-12-01T10:24:40.2279915Z [0m  on aks_komodor.tf line 43, in resource "helm_release" "komodor_agent":
 2025-12-01T10:24:40.2284799Z   43:     value = [4mlocal.komodor_cluster_name[0m[each.key]
