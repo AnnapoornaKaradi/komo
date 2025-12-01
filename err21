@@ -1,12 +1,15 @@
-025-12-01T17:23:42.7061535Z [1m[31mError: [0m[0m[1mInvalid reference[0m
-2025-12-01T17:23:42.7063562Z 
-2025-12-01T17:23:42.7073560Z [0m  on komodor.tf line 26, in resource "kubernetes_secret" "komodor":
-2025-12-01T17:23:42.7074792Z   26:       namespace = [4mkomodor[0m
-2025-12-01T17:23:42.7076452Z [0m
-2025-12-01T17:23:42.7078094Z A reference to a resource type must be followed by at least one attribute
-2025-12-01T17:23:42.7080598Z access, specifying the resource name.
-2025-12-01T17:23:42.7091241Z [0m[0m
-2025-12-01T17:23:42.7187056Z Terraform Plan Exit Code: 1
-2025-12-01T17:23:42.7202389Z 
-2025-12-01T17:23:42.7253238Z ##[error]Script failed with exit code: 1
-2025-12-01T17:23:42.7266922Z [command]/usr/local/bin/az account clear
+2025-12-01T17:35:41.5897259Z If you ever set or change modules or backend configuration for Terraform,
+2025-12-01T17:35:41.5897448Z rerun this command to reinitialize your working directory. If you forget, other
+2025-12-01T17:35:41.5897613Z commands will detect it and remind you to do so if necessary.[0m
+2025-12-01T17:35:54.2208273Z [31m
+2025-12-01T17:35:54.2210664Z [1m[31mError: [0m[0m[1mUnsupported argument[0m
+2025-12-01T17:35:54.2210850Z 
+2025-12-01T17:35:54.2211526Z [0m  on komodor.tf line 29, in resource "kubernetes_secret" "komodor":
+2025-12-01T17:35:54.2212064Z   29:     [4mstring_data[0m = {
+2025-12-01T17:35:54.2212323Z [0m
+2025-12-01T17:35:54.2212604Z An argument named "string_data" is not expected here.
+2025-12-01T17:35:54.2212849Z [0m[0m
+2025-12-01T17:35:54.2334544Z Terraform Plan Exit Code: 1
+2025-12-01T17:35:54.2351688Z 
+2025-12-01T17:35:54.2397941Z ##[error]Script failed with exit code: 1
+2025-12-01T17:35:54.2417913Z [command]/usr/local/bin/az account clear
