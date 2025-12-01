@@ -1,0 +1,12 @@
+025-12-01T17:23:42.7061535Z [1m[31mError: [0m[0m[1mInvalid reference[0m
+2025-12-01T17:23:42.7063562Z 
+2025-12-01T17:23:42.7073560Z [0m  on komodor.tf line 26, in resource "kubernetes_secret" "komodor":
+2025-12-01T17:23:42.7074792Z   26:       namespace = [4mkomodor[0m
+2025-12-01T17:23:42.7076452Z [0m
+2025-12-01T17:23:42.7078094Z A reference to a resource type must be followed by at least one attribute
+2025-12-01T17:23:42.7080598Z access, specifying the resource name.
+2025-12-01T17:23:42.7091241Z [0m[0m
+2025-12-01T17:23:42.7187056Z Terraform Plan Exit Code: 1
+2025-12-01T17:23:42.7202389Z 
+2025-12-01T17:23:42.7253238Z ##[error]Script failed with exit code: 1
+2025-12-01T17:23:42.7266922Z [command]/usr/local/bin/az account clear
