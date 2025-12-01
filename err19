@@ -1,0 +1,65 @@
+025-12-01T16:48:29.2669198Z [31m
+2025-12-01T16:48:29.2669755Z [1m[31mError: [0m[0m[1mFailed to query available provider packages[0m
+2025-12-01T16:48:29.2669867Z 
+2025-12-01T16:48:29.2670373Z [0mCould not retrieve the list of available versions for provider
+2025-12-01T16:48:29.2670758Z hashicorp/azurem: provider registry registry.terraform.io does not have a
+2025-12-01T16:48:29.2671083Z provider named registry.terraform.io/hashicorp/azurem
+2025-12-01T16:48:29.2671836Z 
+2025-12-01T16:48:29.2672212Z If you have just upgraded directly from Terraform v0.12 to Terraform v0.14
+2025-12-01T16:48:29.2672590Z then please upgrade to Terraform v0.13 first and follow the upgrade guide for
+2025-12-01T16:48:29.2672960Z that release, which might help you address this problem.
+2025-12-01T16:48:29.2673306Z [0m[0m
+2025-12-01T16:48:30.9683876Z [31m
+2025-12-01T16:48:30.9684782Z [1m[31mError: [0m[0m[1mCould not load plugin[0m
+2025-12-01T16:48:30.9692211Z 
+2025-12-01T16:48:30.9695081Z [0m
+2025-12-01T16:48:30.9708880Z Plugin reinitialization required. Please run "terraform init".
+2025-12-01T16:48:30.9709188Z 
+2025-12-01T16:48:30.9709656Z Plugins are external binaries that Terraform uses to access and manipulate
+2025-12-01T16:48:30.9710091Z resources. The configuration provided requires plugins which can't be located,
+2025-12-01T16:48:30.9710535Z don't satisfy the version constraints, or are otherwise incompatible.
+2025-12-01T16:48:30.9710673Z 
+2025-12-01T16:48:30.9711140Z Terraform automatically discovers provider requirements from your
+2025-12-01T16:48:30.9711539Z configuration, including providers used in child modules. To see the
+2025-12-01T16:48:30.9711960Z requirements and constraints, run "terraform providers".
+2025-12-01T16:48:30.9712107Z 
+2025-12-01T16:48:30.9712437Z 15 problems:
+2025-12-01T16:48:30.9712555Z 
+2025-12-01T16:48:30.9713017Z - Failed to instantiate provider "registry.terraform.io/azure/azapi" to obtain
+2025-12-01T16:48:30.9713460Z schema: unknown provider "registry.terraform.io/azure/azapi"
+2025-12-01T16:48:30.9713911Z - Failed to instantiate provider "registry.terraform.io/chilicat/pkcs12" to
+2025-12-01T16:48:30.9714326Z obtain schema: unknown provider "registry.terraform.io/chilicat/pkcs12"
+2025-12-01T16:48:30.9714775Z - Failed to instantiate provider "registry.terraform.io/hashicorp/azuread" to
+2025-12-01T16:48:30.9715223Z obtain schema: unknown provider "registry.terraform.io/hashicorp/azuread"
+2025-12-01T16:48:30.9718755Z - Failed to instantiate provider "registry.terraform.io/hashicorp/azurem" to
+2025-12-01T16:48:30.9719287Z obtain schema: unknown provider "registry.terraform.io/hashicorp/azurem"
+2025-12-01T16:48:30.9719751Z - Failed to instantiate provider "registry.terraform.io/hashicorp/azurerm" to
+2025-12-01T16:48:30.9720197Z obtain schema: unknown provider "registry.terraform.io/hashicorp/azurerm"
+2025-12-01T16:48:30.9721217Z - Failed to instantiate provider "registry.terraform.io/hashicorp/dns" to
+2025-12-01T16:48:30.9721651Z obtain schema: unknown provider "registry.terraform.io/hashicorp/dns"
+2025-12-01T16:48:30.9722099Z - Failed to instantiate provider "registry.terraform.io/hashicorp/external" to
+2025-12-01T16:48:30.9722546Z obtain schema: unknown provider "registry.terraform.io/hashicorp/external"
+2025-12-01T16:48:30.9722964Z - Failed to instantiate provider "registry.terraform.io/hashicorp/helm" to
+2025-12-01T16:48:30.9723404Z obtain schema: unknown provider "registry.terraform.io/hashicorp/helm"
+2025-12-01T16:48:30.9723857Z - Failed to instantiate provider "registry.terraform.io/hashicorp/kubernetes"
+2025-12-01T16:48:30.9724242Z to obtain schema: unknown provider
+2025-12-01T16:48:30.9724642Z "registry.terraform.io/hashicorp/kubernetes"
+2025-12-01T16:48:30.9725080Z - Failed to instantiate provider "registry.terraform.io/hashicorp/local" to
+2025-12-01T16:48:30.9725520Z obtain schema: unknown provider "registry.terraform.io/hashicorp/local"
+2025-12-01T16:48:30.9726175Z - Failed to instantiate provider "registry.terraform.io/hashicorp/null" to
+2025-12-01T16:48:30.9726536Z obtain schema: unknown provider "registry.terraform.io/hashicorp/null"
+2025-12-01T16:48:30.9726894Z - Failed to instantiate provider "registry.terraform.io/hashicorp/random" to
+2025-12-01T16:48:30.9727355Z obtain schema: unknown provider "registry.terraform.io/hashicorp/random"
+2025-12-01T16:48:30.9727724Z - Failed to instantiate provider "registry.terraform.io/hashicorp/time" to
+2025-12-01T16:48:30.9728087Z obtain schema: unknown provider "registry.terraform.io/hashicorp/time"
+2025-12-01T16:48:30.9728891Z - Failed to instantiate provider "registry.terraform.io/hashicorp/tls" to
+2025-12-01T16:48:30.9729221Z obtain schema: unknown provider "registry.terraform.io/hashicorp/tls"
+2025-12-01T16:48:30.9729602Z - Failed to instantiate provider "registry.terraform.io/mastercard/restapi" to
+2025-12-01T16:48:30.9729982Z obtain schema: unknown provider "registry.terraform.io/mastercard/restapi"
+2025-12-01T16:48:30.9730126Z 
+2025-12-01T16:48:30.9730636Z [0m[0m
+2025-12-01T16:48:30.9768092Z Terraform Plan Exit Code: 1
+2025-12-01T16:48:30.9790343Z 
+2025-12-01T16:48:30.9849479Z ##[error]Script failed with exit code: 1
+2025-12-01T16:48:30.9872834Z [command]/usr/local/bin/az account clear
+2025-12-01T16:48:31.7930593Z ##[section]Finishing: Terraform Plan
