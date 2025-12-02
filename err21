@@ -1,11 +1,49 @@
-Error: parsing "": cannot parse an empty string
-
-  on komodor.tf line 7, in data "azurerm_key_vault_secret" "komodor_api_key":
-   7:     key_vault_id = try (
-   8:       data.terraform_remote_state.baseinfra_00[var.env_ref].outputs.key_vaults["env"][var.env_ref]["id"],
-   9:       data.terraform_remote_state.baseinfra_00[var.env_ref].outputs.key_vaults[var.env_ref]["id"],
-  10:       ""
-  11:     )
-
-
-Terraform Plan Exit Code: 1
+01.azconfig.io/kv/ExosMacro:Redis:ReadWriteConnectionStringSecondary?label=][0m
+2025-12-02T07:40:31.4212498Z [31m
+2025-12-02T07:40:31.4213575Z [1m[31mError: [0m[0m[1mError in function call[0m
+2025-12-02T07:40:31.4214291Z 
+2025-12-02T07:40:31.4230265Z [0m  on komodor.tf line 7, in data "azurerm_key_vault_secret" "komodor_api_key":
+2025-12-02T07:40:31.4230884Z    7:     key_vault_id = [4mtry ([0m
+2025-12-02T07:40:31.4231446Z [0m   8:       data.terraform_remote_state.baseinfra_00[var.env_ref].outputs.key_vaults["env"][var.env_ref]["id"],
+2025-12-02T07:40:31.4231788Z    9:       data.terraform_remote_state.baseinfra_00[var.env_ref].outputs.key_vaults[var.env_ref]["id"]
+2025-12-02T07:40:31.4232028Z   10:     )
+2025-12-02T07:40:31.4236533Z     [90m|----------------[0m
+2025-12-02T07:40:31.4239436Z [0m    [90m|[0m [1mdata.terraform_remote_state.baseinfra_00[0m is object with 1 attribute "local"[0m
+2025-12-02T07:40:31.4242510Z [0m    [90m|[0m [1mvar.env_ref[0m is "sandbox"[0m
+2025-12-02T07:40:31.4242806Z [0m
+2025-12-02T07:40:31.4253535Z Call to function "try" failed: no expression succeeded:
+2025-12-02T07:40:31.4253880Z - Invalid index (at komodor.tf:8,47-60)
+2025-12-02T07:40:31.4254225Z   The given key does not identify an element in this collection value.
+2025-12-02T07:40:31.4254520Z - Invalid index (at komodor.tf:9,47-60)
+2025-12-02T07:40:31.4254807Z   The given key does not identify an element in this collection value.
+2025-12-02T07:40:31.4256803Z 
+2025-12-02T07:40:31.4264166Z At least one expression must produce a successful result.
+2025-12-02T07:40:31.4264571Z [0m[0m
+2025-12-02T07:40:31.4281975Z [31m
+2025-12-02T07:40:31.4288035Z [1m[31mError: [0m[0m[1mError in function call[0m
+2025-12-02T07:40:31.4290296Z 
+2025-12-02T07:40:31.4292109Z [0m  on komodor.tf line 14, in locals:
+2025-12-02T07:40:31.4293047Z   14:     komodor_cluster_name = [4mtry([0m
+2025-12-02T07:40:31.4293908Z [0m  15:         data.terraform_remote_state.baseinfra_00[var.env_ref].outputs.aks_clusters[var.env_ref]["name"],
+2025-12-02T07:40:31.4294722Z   16:         data.terraform_remote_state.baseinfra_00[var.env_ref].outputs.key_vaults[var.env_ref],
+2025-12-02T07:40:31.4296933Z   17:         data.terraform_remote_state.baseinfra_00[var.env_ref].outputs.key_vaults[var.env_ref]["clusterName"]
+2025-12-02T07:40:31.4297434Z   18:     )
+2025-12-02T07:40:31.4297833Z     [90m|----------------[0m
+2025-12-02T07:40:31.4298435Z [0m    [90m|[0m [1mdata.terraform_remote_state.baseinfra_00[0m is object with 1 attribute "local"[0m
+2025-12-02T07:40:31.4300002Z [0m    [90m|[0m [1mvar.env_ref[0m is "sandbox"[0m
+2025-12-02T07:40:31.4300757Z [0m
+2025-12-02T07:40:31.4301056Z Call to function "try" failed: no expression succeeded:
+2025-12-02T07:40:31.4301453Z - Invalid index (at komodor.tf:15,49-62)
+2025-12-02T07:40:31.4301783Z   The given key does not identify an element in this collection value.
+2025-12-02T07:40:31.4302528Z - Invalid index (at komodor.tf:16,49-62)
+2025-12-02T07:40:31.4303102Z   The given key does not identify an element in this collection value.
+2025-12-02T07:40:31.4303832Z - Invalid index (at komodor.tf:17,49-62)
+2025-12-02T07:40:31.4304162Z   The given key does not identify an element in this collection value.
+2025-12-02T07:40:31.4304275Z 
+2025-12-02T07:40:31.4305881Z At least one expression must produce a successful result.
+2025-12-02T07:40:31.4306276Z [0m[0m
+2025-12-02T07:40:31.5229239Z Terraform Plan Exit Code: 1
+2025-12-02T07:40:31.5254304Z 
+2025-12-02T07:40:31.5316668Z ##[error]Script failed with exit code: 1
+2025-12-02T07:40:31.5335626Z [command]/usr/local/bin/az account clear
+2025-12-02T07:40:32.6095623Z ##[section]Finishing: Terraform Plan
