@@ -1,0 +1,8 @@
+2025-12-02T16:18:23.8608992Z [1m[31mError: [0m[0m[1mUnable to continue with install: ResourceQuota "komodor-critical-pods" in namespace "komodor" exists and cannot be imported into the current release: invalid ownership metadata; annotation validation error: key "meta.helm.sh/release-name" must equal "komodor-agent-test": current value is "komodor-agent"[0m
+2025-12-02T16:18:23.8611692Z 
+2025-12-02T16:18:23.8613030Z [0m  on aks_komodor.tf line 31, in resource "helm_release" "komodor_agent":
+2025-12-02T16:18:23.8613523Z   31: resource "helm_release" "komodor_agent" [4m{[0m
+2025-12-02T16:18:23.8613825Z [0m
+2025-12-02T16:18:23.8614137Z [0m[0m
+2025-12-02T16:18:23.9066920Z 
+2025-12-02T16:18:23.9126246Z ##[error]Script failed with exit code: 1
