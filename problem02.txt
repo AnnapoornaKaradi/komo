@@ -1,0 +1,6 @@
+Create a new GPU pool, name "PEGpu" and making sure the taint is the same as the name.  This will require a new subnet. 
+
+
+We need an instance of GPU with the same SKU as of HeadingsExtractSvc for a different workload. The new Instance of svc is called 'PlntExpnHeadingsExtractSvc'.
+
+
