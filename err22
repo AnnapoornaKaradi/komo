@@ -1,0 +1,22 @@
+2025-12-02T08:48:09.1293760Z [31m
+2025-12-02T08:48:09.1295601Z [1m[31mError: [0m[0m[1mError in function call[0m
+2025-12-02T08:48:09.1295707Z 
+2025-12-02T08:48:09.1296145Z [0m  on komodor.tf line 13, in locals:
+2025-12-02T08:48:09.1296540Z   13:     komodor_cluster_name = [4mtry([0m
+2025-12-02T08:48:09.1297022Z [0m  14:         data.terraform_remote_state.baseinfra_00["local"].outputs["aks"][var.env_ref]["name"]
+2025-12-02T08:48:09.1297270Z   15:     )
+2025-12-02T08:48:09.1297606Z     [90m|----------------[0m
+2025-12-02T08:48:09.1298395Z [0m    [90m|[0m [1mdata.terraform_remote_state.baseinfra_00["local"].outputs["aks"][0m is object with 1 attribute "app"[0m
+2025-12-02T08:48:09.1298820Z [0m    [90m|[0m [1mvar.env_ref[0m is "sandbox"[0m
+2025-12-02T08:48:09.1299430Z [0m
+2025-12-02T08:48:09.1299722Z Call to function "try" failed: no expression succeeded:
+2025-12-02T08:48:09.1300322Z - Invalid index (at komodor.tf:14,73-86)
+2025-12-02T08:48:09.1301669Z   The given key does not identify an element in this collection value.
+2025-12-02T08:48:09.1302089Z 
+2025-12-02T08:48:09.1306086Z At least one expression must produce a successful result.
+2025-12-02T08:48:09.1307108Z [0m[0m
+2025-12-02T08:48:09.1874321Z Terraform Plan Exit Code: 1
+2025-12-02T08:48:09.1893404Z 
+2025-12-02T08:48:09.1946169Z ##[error]Script failed with exit code: 1
+2025-12-02T08:48:09.1964074Z [command]/usr/local/bin/az account clear
+2025-12-02T08:48:10.1074549Z ##[section]Finishing: Terraform Plan
