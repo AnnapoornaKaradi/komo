@@ -1,0 +1,70 @@
+locals {
+    komodor_secret_name = "komodor-api-key"
+}
+
+data "azurerm_key_vault_secret" "komodor_api_key" {
+    name = local.komodor_secret_name
+    key_vault_id = try (
+      data.terraform_remote_state.baseinfra_00["local"].outputs.key_vaults["env"]["infra"].id
+    )
+}
+
+locals {
+    komodor_cluster_name = try (
+        data.terraform_remote_state.baseinfra_00["local"].outputs.aks["app"].host
+    )
+}
+
+resource "kubernetes_secret" "komodor" {
+    metadata {
+      name = "komodor-secrets-${var.env_ref}"
+      namespace = "komodor"
+    }
+
+    data = {
+      apiKey = base64encode(data.azurerm_key_vault_secret.komodor_api_key.value)
+    }
+    type = "Opaque"
+
+}
+
+resource "helm_release" "komodor_agent" {
+  name       = "komodor-agent-test"
+  repository = "https://helm-charts.komodor.io"
+  chart      = "komodor-agent"
+  namespace  = "komodor"
+  create_namespace = true
+
+  set {
+    name  = "clusterName"
+    value = local.komodor_cluster_name
+  }
+
+  # Values file ensures API key comes from secret
+  values = [
+    file("${path.module}/helm_charts/komodor/values-komodor.yaml")
+  ]
+
+  depends_on = [
+    kubernetes_secret.komodor
+  ]
+}
+
+
+
+
+
+
+
+2025-12-02T15:14:21.1971208Z [0m[1mhelm_release.komodor_agent: Creating...[0m[0m
+2025-12-02T15:14:25.2432779Z [0m[1mdata.azurerm_storage_account_sas.tools: Reading... [id=60bc7309beceb9fd1bb14974d8146dd8976878191cf7bf7369cb0e2ac2c59a4e][0m[0m
+2025-12-02T15:14:25.2955167Z [0m[1mdata.azurerm_storage_account_sas.tools: Read complete after 0s [id=3270c8196ff02ca12beb8c63380150ee329f2f3914f962d4ae4f87d9a61fb5bf][0m[0m
+2025-12-02T15:14:28.4371454Z [31m
+2025-12-02T15:14:28.4373282Z [1m[31mError: [0m[0m[1mexecution error at (komodor-agent/templates/secret-credentials.yaml:8:30): apiKey is a required value![0m
+2025-12-02T15:14:28.4374156Z 
+2025-12-02T15:14:28.4375077Z [0m  on aks_komodor.tf line 31, in resource "helm_release" "komodor_agent":
+2025-12-02T15:14:28.4375688Z   31: resource "helm_release" "komodor_agent" [4m{[0m
+2025-12-02T15:14:28.4376037Z [0m
+2025-12-02T15:14:28.4376397Z [0m[0m
+2025-12-02T15:14:28.4879961Z 
+2025-12-02T15:14:28.4926050Z ##[error]Script failed with exit code: 1
