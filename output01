@@ -1,0 +1,104 @@
+2025-12-02T09:46:26.6361385Z An execution plan has been generated and is shown below.
+2025-12-02T09:46:26.6367152Z Resource actions are indicated with the following symbols:
+2025-12-02T09:46:26.6368726Z   [32m+[0m create
+2025-12-02T09:46:26.6370001Z  [36m<=[0m read (data resources)
+2025-12-02T09:46:26.6370433Z [0m
+2025-12-02T09:46:26.6370862Z Terraform will perform the following actions:
+2025-12-02T09:46:26.6371055Z 
+2025-12-02T09:46:26.6498881Z [1m  # data.azurerm_storage_account_sas.tools[0m will be read during apply
+2025-12-02T09:46:26.6503722Z   # (config refers to values not yet known)[0m[0m
+2025-12-02T09:46:26.6506017Z [0m [36m<=[0m[0m data "azurerm_storage_account_sas" "tools"  {
+2025-12-02T09:46:26.6511621Z       [33m~[0m [0m[1m[0mexpiry[0m[0m            = "2025-11-21T16:42:06Z" [33m->[0m [0m(known after apply)
+2025-12-02T09:46:26.6516388Z       [33m~[0m [0m[1m[0mid[0m[0m                = "82c55609cd83212b387738e4b56ab2c237b114606abaebfe9da6433069d140f1" [33m->[0m [0m(known after apply)
+2025-12-02T09:46:26.6517312Z       [33m~[0m [0m[1m[0msas[0m[0m               = (sensitive value)
+2025-12-02T09:46:26.6518312Z       [31m-[0m [0m[1m[0msigned_version[0m[0m    = "2017-07-29" [90m->[0m [0m[90mnull[0m[0m
+2025-12-02T09:46:26.6522217Z       [33m~[0m [0m[1m[0mstart[0m[0m             = "2025-11-21T15:42:06Z" [33m->[0m [0m(known after apply)
+2025-12-02T09:46:26.6527331Z         [90m# (2 unchanged attributes hidden)[0m[0m
+2025-12-02T09:46:26.6527471Z 
+2025-12-02T09:46:26.6527609Z 
+2025-12-02T09:46:26.6527726Z 
+2025-12-02T09:46:26.6527836Z 
+2025-12-02T09:46:26.6528295Z       [32m+[0m [0mtimeouts {
+2025-12-02T09:46:26.6528858Z           [32m+[0m [0m[1m[0mread[0m[0m = (known after apply)
+2025-12-02T09:46:26.6529190Z         }
+2025-12-02T09:46:26.6531854Z         [90m# (3 unchanged blocks hidden)[0m[0m
+2025-12-02T09:46:26.6532106Z     }
+2025-12-02T09:46:26.6532217Z 
+2025-12-02T09:46:26.6550135Z [1m  # helm_release.komodor_agent[0m will be created[0m[0m
+2025-12-02T09:46:26.6550710Z [0m  [32m+[0m[0m resource "helm_release" "komodor_agent" {
+2025-12-02T09:46:26.6551223Z       [32m+[0m [0m[1m[0matomic[0m[0m                     = false
+2025-12-02T09:46:26.6552405Z       [32m+[0m [0m[1m[0mchart[0m[0m                      = "komodorio/komodor-agent"
+2025-12-02T09:46:26.6553021Z       [32m+[0m [0m[1m[0mcleanup_on_fail[0m[0m            = false
+2025-12-02T09:46:26.6553935Z       [32m+[0m [0m[1m[0mcreate_namespace[0m[0m           = false
+2025-12-02T09:46:26.6554676Z       [32m+[0m [0m[1m[0mdependency_update[0m[0m          = false
+2025-12-02T09:46:26.6555396Z       [32m+[0m [0m[1m[0mdisable_crd_hooks[0m[0m          = false
+2025-12-02T09:46:26.6555995Z       [32m+[0m [0m[1m[0mdisable_openapi_validation[0m[0m = false
+2025-12-02T09:46:26.6556591Z       [32m+[0m [0m[1m[0mdisable_webhooks[0m[0m           = false
+2025-12-02T09:46:26.6557238Z       [32m+[0m [0m[1m[0mforce_update[0m[0m               = false
+2025-12-02T09:46:26.6557823Z       [32m+[0m [0m[1m[0mid[0m[0m                         = (known after apply)
+2025-12-02T09:46:26.6563943Z       [32m+[0m [0m[1m[0mlint[0m[0m                       = false
+2025-12-02T09:46:26.6571207Z       [32m+[0m [0m[1m[0mmanifest[0m[0m                   = (known after apply)
+2025-12-02T09:46:26.6571752Z       [32m+[0m [0m[1m[0mmax_history[0m[0m                = 0
+2025-12-02T09:46:26.6572361Z       [32m+[0m [0m[1m[0mmetadata[0m[0m                   = (known after apply)
+2025-12-02T09:46:26.6572866Z       [32m+[0m [0m[1m[0mname[0m[0m                       = "komodor-agent"
+2025-12-02T09:46:26.6573371Z       [32m+[0m [0m[1m[0mnamespace[0m[0m                  = "komodor"
+2025-12-02T09:46:26.6574124Z       [32m+[0m [0m[1m[0mpass_credentials[0m[0m           = false
+2025-12-02T09:46:26.6574802Z       [32m+[0m [0m[1m[0mrecreate_pods[0m[0m              = false
+2025-12-02T09:46:26.6575320Z       [32m+[0m [0m[1m[0mrender_subchart_notes[0m[0m      = true
+2025-12-02T09:46:26.6575824Z       [32m+[0m [0m[1m[0mreplace[0m[0m                    = false
+2025-12-02T09:46:26.6576453Z       [32m+[0m [0m[1m[0mrepository[0m[0m                 = "https://helm.komodor.io"
+2025-12-02T09:46:26.6576990Z       [32m+[0m [0m[1m[0mreset_values[0m[0m               = false
+2025-12-02T09:46:26.6585133Z       [32m+[0m [0m[1m[0mreuse_values[0m[0m               = false
+2025-12-02T09:46:26.6586695Z       [32m+[0m [0m[1m[0mskip_crds[0m[0m                  = false
+2025-12-02T09:46:26.6587604Z       [32m+[0m [0m[1m[0mstatus[0m[0m                     = "deployed"
+2025-12-02T09:46:26.6588412Z       [32m+[0m [0m[1m[0mtimeout[0m[0m                    = 300
+2025-12-02T09:46:26.6589476Z       [32m+[0m [0m[1m[0mvalues[0m[0m                     = [
+2025-12-02T09:46:26.6591584Z           [32m+[0m [0m<<-EOT
+2025-12-02T09:46:26.6591968Z                 env:
+2025-12-02T09:46:26.6592568Z                 - name: KOMODOR_API_KEY
+2025-12-02T09:46:26.6593047Z                   valueFrom:
+2025-12-02T09:46:26.6593532Z                     secretKeyRef:
+2025-12-02T09:46:26.6594100Z                       name: komodor-secrets-sandbox
+2025-12-02T09:46:26.6594917Z                       key: apiKey
+2025-12-02T09:46:26.6595570Z             EOT,
+2025-12-02T09:46:26.6596101Z         ]
+2025-12-02T09:46:26.6597128Z       [32m+[0m [0m[1m[0mverify[0m[0m                     = false
+2025-12-02T09:46:26.6598092Z       [32m+[0m [0m[1m[0mversion[0m[0m                    = (known after apply)
+2025-12-02T09:46:26.6599315Z       [32m+[0m [0m[1m[0mwait[0m[0m                       = true
+2025-12-02T09:46:26.6600186Z       [32m+[0m [0m[1m[0mwait_for_jobs[0m[0m              = false
+2025-12-02T09:46:26.6600627Z 
+2025-12-02T09:46:26.6602479Z       [32m+[0m [0mset {
+2025-12-02T09:46:26.6603093Z           [32m+[0m [0m[1m[0mname[0m[0m  = "clusterName"
+2025-12-02T09:46:26.6607358Z           [32m+[0m [0m[1m[0mvalue[0m[0m = "https://aks-sandbox-eus2-01-b8a6fb7c.hcp.eastus2.azmk8s.io:443"
+2025-12-02T09:46:26.6607790Z         }
+2025-12-02T09:46:26.6608065Z     }
+2025-12-02T09:46:26.6608206Z 
+2025-12-02T09:46:26.6608801Z [1m  # kubernetes_secret.komodor[0m will be created[0m[0m
+2025-12-02T09:46:26.6609344Z [0m  [32m+[0m[0m resource "kubernetes_secret" "komodor" {
+2025-12-02T09:46:26.6610391Z       [32m+[0m [0m[1m[0mdata[0m[0m                           = (sensitive value)
+2025-12-02T09:46:26.6610982Z       [32m+[0m [0m[1m[0mid[0m[0m                             = (known after apply)
+2025-12-02T09:46:26.6611552Z       [32m+[0m [0m[1m[0mtype[0m[0m                           = "Opaque"
+2025-12-02T09:46:26.6612134Z       [32m+[0m [0m[1m[0mwait_for_service_account_token[0m[0m = true
+2025-12-02T09:46:26.6612262Z 
+2025-12-02T09:46:26.6612708Z       [32m+[0m [0mmetadata {
+2025-12-02T09:46:26.6613298Z           [32m+[0m [0m[1m[0mgeneration[0m[0m       = (known after apply)
+2025-12-02T09:46:26.6613874Z           [32m+[0m [0m[1m[0mname[0m[0m             = "komodor-secrets-sandbox"
+2025-12-02T09:46:26.6614426Z           [32m+[0m [0m[1m[0mnamespace[0m[0m        = "komodor"
+2025-12-02T09:46:26.6615186Z           [32m+[0m [0m[1m[0mresource_version[0m[0m = (known after apply)
+2025-12-02T09:46:26.6615752Z           [32m+[0m [0m[1m[0muid[0m[0m              = (known after apply)
+2025-12-02T09:46:26.6616022Z         }
+2025-12-02T09:46:26.6616296Z     }
+2025-12-02T09:46:26.6616404Z 
+2025-12-02T09:46:26.6616924Z [0m[1mPlan:[0m 2 to add, 0 to change, 0 to destroy.[0m
+2025-12-02T09:46:26.6617031Z 
+2025-12-02T09:46:26.6617523Z ------------------------------------------------------------------------
+2025-12-02T09:46:26.6617645Z 
+2025-12-02T09:46:26.6618069Z This plan was saved to: /tmp/sandbox_eus2_00.tfplan
+2025-12-02T09:46:26.6618206Z 
+2025-12-02T09:46:26.6618600Z To perform exactly these actions, run the following command to apply:
+2025-12-02T09:46:26.6618947Z     terraform apply "/tmp/sandbox_eus2_00.tfplan"
+2025-12-02T09:46:26.6619074Z 
+2025-12-02T09:46:26.7795185Z Terraform Plan Exit Code: 2
+2025-12-02T09:46:27.1227941Z 
+2025-12-02T09:46:27.1271167Z [command]/usr/local/bin/az account clear
+2025-12-02T09:46:28.2919380Z ##[section]Finishing: Terraform Plan
