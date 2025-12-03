@@ -1,0 +1,10 @@
+it should be in the storage account spec:
+ 
+you would concat or add that range, you'll need to do the logic to do this only for the prod environment
+
+
+ To support TM data migration, we will need virtual machine whitelisted for access from on-prem to Prod storage account "sttmimagesprodeus201"
+
+ 170.88.179.0/24
+
+Whitelist on-prem VM to TM storage account in Production
