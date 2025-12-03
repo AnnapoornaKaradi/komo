@@ -1,0 +1,70 @@
+2025-12-03T16:23:30.5011413Z [1m[31mError: [0m[0m[1mUnable to continue with install: ResourceQuota "komodor-critical-pods" in namespace "komodor" exists and cannot be imported into the current release: invalid ownership metadata; annotation validation error: key "meta.helm.sh/release-name" must equal "komodor-agent-test": current value is "komodor-agent"[0m
+2025-12-03T16:23:30.5011954Z 
+2025-12-03T16:23:30.5012445Z [0m  on aks_komodor.tf line 31, in resource "helm_release" "komodor_agent":
+2025-12-03T16:23:30.5012887Z   31: resource "helm_release" "komodor_agent" [4m{[0m
+2025-12-03T16:23:30.5013163Z [0m
+2025-12-03T16:23:30.5013453Z [0m[0m
+2025-12-03T16:23:30.5438510Z 
+
+
+locals {
+    komodor_secret_name = "komodor-api-key"
+}
+
+data "azurerm_key_vault_secret" "komodor_api_key" {
+    name = local.komodor_secret_name
+    key_vault_id = try (
+      data.terraform_remote_state.baseinfra_00["local"].outputs.key_vaults["env"]["infra"].id
+    )
+}
+
+locals {
+    komodor_cluster_name = try (
+        data.terraform_remote_state.baseinfra_00["local"].outputs.aks["app"].host
+    )
+}
+
+resource "kubernetes_secret" "komodor" {
+    metadata {
+      name = "komodor-secrets"
+      namespace = "komodor"
+    }
+
+    data = {
+      apiKey = data.azurerm_key_vault_secret.komodor_api_key.value
+    }
+    type = "Opaque"
+
+}
+
+resource "helm_release" "komodor_agent" {
+  name       = "komodor-agent-test"
+  repository = "https://helm-charts.komodor.io"
+  chart      = "komodor-agent"
+  namespace  = "komodor"
+  create_namespace = true
+  force_update = true
+  recreate_pods = true
+  atomic = true
+
+  set {
+    name  = "clusterName"
+    value = local.komodor_cluster_name
+  }
+
+  set {
+    name = "apiKeySecret"
+    value = "komodor-secrets"
+  }
+
+  # Values file ensures API key comes from secret
+  values = [
+    file("${path.module}/helm_charts/komodor/values-komodor.yaml")
+  ]
+
+ 
+
+  depends_on = [
+    kubernetes_secret.komodor
+  ]
+}
