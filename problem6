@@ -1,0 +1,6 @@
+7Z ‌│‌ ‌Error: ‌release nginx-ingress failed, and has been uninstalled due to atomic being set: failed pre-install: job failed: BackoffLimitExceeded‌
+2025-12-03T07:49:24.1907979Z ‌│‌ ‌
+2025-12-03T07:49:24.1909959Z ‌│‌ ‌  with helm_release.nginx_ingress,‌
+2025-12-03T07:49:24.1914853Z ‌│‌ ‌  on main.tf line 116, in resource &quot;helm_release&quot; &quot;nginx_ingress&quot;:‌
+2025-12-03T07:49:24.1915127Z ‌│‌ ‌ 116: resource &quot;helm_release&quot; &quot;nginx_ingress&quot; ‌{‌
+2025-12-03T07:49:24.1915355Z ‌│‌
