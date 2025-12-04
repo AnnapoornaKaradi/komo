@@ -1,0 +1,14 @@
+check 
+                    if komodor-agent exists ? 
+					put a message komodor is present            
+
+                     else 
+                         komodor-agent exists not with the latest version
+                          install latest version
+                   if 
+                          komodor-agent exists with the latest version 
+                          put a message saying komodor-agent already exists
+                    else 
+                          if komodor-agent not present atall
+                         then 
+                               install komodor-agent
