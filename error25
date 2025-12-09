@@ -1,0 +1,27 @@
+2025-12-09T14:43:15.7144111Z [31m[0mThere are some problems with the configuration, described below.
+2025-12-09T14:43:15.7144467Z 
+2025-12-09T14:43:15.7145146Z The Terraform configuration must be valid before initialization so that
+2025-12-09T14:43:15.7145640Z Terraform can determine which modules and providers need to be installed.[0m[0m[0m
+2025-12-09T14:43:15.7146237Z [31m
+2025-12-09T14:43:15.7146535Z [1m[31mError: [0m[0m[1mInvalid expression[0m
+2025-12-09T14:43:15.7146704Z 
+2025-12-09T14:43:15.7147041Z [0m  on output.tf line 309, in output "komodor_agent_status":
+2025-12-09T14:43:15.7147383Z  309: 	value = local.komodor_exists ?
+2025-12-09T14:43:15.7147857Z  310: 	"komodor agent already exists in namespace '${local.komodor_namespace}' (version: ${local.komodor_version}). Terraform will not install it." :
+2025-12-09T14:43:15.7148058Z 
+2025-12-09T14:43:15.7148299Z Expected the start of an expression, but found an invalid expression token.
+2025-12-09T14:43:15.7148575Z [0m[0m
+2025-12-09T14:43:15.9751286Z [31m
+2025-12-09T14:43:15.9752024Z [1m[31mError: [0m[0m[1mInvalid expression[0m
+2025-12-09T14:43:15.9752282Z 
+2025-12-09T14:43:15.9755313Z [0m  on output.tf line 309, in output "komodor_agent_status":
+2025-12-09T14:43:15.9756567Z  309: 	value = local.komodor_exists ?
+2025-12-09T14:43:15.9757186Z  310: 	"komodor agent already exists in namespace '${local.komodor_namespace}' (version: ${local.komodor_version}). Terraform will not install it." :
+2025-12-09T14:43:15.9757494Z 
+2025-12-09T14:43:15.9758116Z Expected the start of an expression, but found an invalid expression token.
+2025-12-09T14:43:15.9758741Z [0m[0m
+2025-12-09T14:43:15.9795961Z Terraform Plan Exit Code: 1
+2025-12-09T14:43:15.9814114Z 
+2025-12-09T14:43:15.9857396Z ##[error]Script failed with exit code: 1
+2025-12-09T14:43:15.9873042Z [command]/usr/local/bin/az account clear
+2025-12-09T14:43:16.7935398Z ##[section]Finishing: Terraform Plan
