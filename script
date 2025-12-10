@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -euo pipefail
+
+
+if helm status komodor-agent  -n komodor  >/dev/null 2>&1; then
+  echo '{"exists": "true", "version": ""}'
+
+  else
+    echo '{"exists": "false", "version": ""}'
+fi
+~
+~
