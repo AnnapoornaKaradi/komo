@@ -1,8 +1,7 @@
 Changes to Outputs:
   + komodor_agent_check  = {
-      + "exists"  = "false"
+      + "exists"  = "true"
       + "version" = ""
     }
-  + komodor_agent_status = "komodor agent NOT FOUND in namespace 'komodor'. Terraform will install it."
-  + komodor_exist_flag   = false
-
+  + komodor_agent_status = "komodor agent already exists in namespace 'komodor'. Terraform will not install it."
+  + komodor_exist_flag   = true
