@@ -1,41 +1,38 @@
-2025-12-10T11:22:22.8727324Z [31m
-2025-12-10T11:22:22.8728215Z [1m[31mError: [0m[0m[1mExternal Program Execution Failed[0m
-2025-12-10T11:22:22.8728385Z 
-2025-12-10T11:22:22.8729101Z [0m  on aks_komodor.tf line 8, in data "external" "komodor_release":
-2025-12-10T11:22:22.8729982Z    8:   program = [4m[[0m
-2025-12-10T11:22:22.8730473Z [0m   9: [4m    "bash",[0m
-2025-12-10T11:22:22.8730975Z [0m  10: [4m    "lc",[0m
-2025-12-10T11:22:22.8731645Z [0m  11: [4m    "set -euo pipefail; if kubectl get deploy komodor-agent -n komodor >/dev/null 2>&1; then echo '{\"exists\":\"true\"}'; else echo '{\"exists\":\"false\"}'; fi"[0m
-2025-12-10T11:22:22.8731968Z [0m  12: [4m  ][0m  
-2025-12-10T11:22:22.8732164Z [0m
-2025-12-10T11:22:22.8732381Z The data source received an unexpected error while attempting to execute the
-2025-12-10T11:22:22.8733068Z program.
-2025-12-10T11:22:22.8733178Z 
-2025-12-10T11:22:22.8733400Z The program was executed, however it returned no additional error messaging.
-2025-12-10T11:22:22.8733521Z 
-2025-12-10T11:22:22.8733698Z Program: /usr/bin/bash
-2025-12-10T11:22:22.8733890Z State: exit status 1
-2025-12-10T11:22:22.8734098Z [0m[0m
-2025-12-10T11:22:22.9352269Z Terraform Plan Exit Code: 1
-2025-12-10T11:22:22.9369521Z 
-2025-12-10T11:22:22.9412485Z ##[error]Script failed with exit code: 1
-2025-12-10T11:22:22.9430154Z [command]/usr/local/bin/az account clear
-2025-12-10T11:22:23.6287175Z ##[section]Finishing: Terraform Plan
-
-
-
-data "external" "komodor_release" {
-  program = [
-    "bash",
-    "-lc",
-    "set -euo pipefail; \
-     echo 'DEBUG: current-context=' $(kubectl config current-context || echo 'none') >&2; \
-     echo 'DEBUG: deployments in ns komodor:' >&2; \
-     kubectl get deploy -n komodor >&2 || echo 'DEBUG: (failed to list deploys in ns komodor)' >&2; \
-     if kubectl get deploy komodor-agent -n komodor >/dev/null 2>&1; then \
-       echo '{\"exists\":\"true\",\"version\":\"\"}'; \
-     else \
-       echo '{\"exists\":\"false\",\"version\":\"\"}'; \
-     fi"
-  ]
-}
+2025-12-10T14:53:19.6400887Z [1m[31mError: [0m[0m[1mExternal Program Execution Failed[0m
+2025-12-10T14:53:19.6401647Z 
+2025-12-10T14:53:19.6402896Z [0m  on aks_komodor.tf line 8, in data "external" "komodor_release":
+2025-12-10T14:53:19.6403644Z    8:   program = [4m[ "bash", "${path.module}/scripts/check_komodor.sh"][0m
+2025-12-10T14:53:19.6404153Z [0m
+2025-12-10T14:53:19.6404633Z The data source received an unexpected error while attempting to execute the
+2025-12-10T14:53:19.6405082Z program.
+2025-12-10T14:53:19.6405245Z 
+2025-12-10T14:53:19.6405635Z Program: /usr/bin/bash
+2025-12-10T14:53:19.6406242Z Error Message: E1210 14:52:07.521790    5550 memcache.go:265] "Unhandled
+2025-12-10T14:53:19.6406733Z Error" err="couldn't get current server API group list: Get
+2025-12-10T14:53:19.6407780Z \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect:
+2025-12-10T14:53:19.6408297Z connection refused"
+2025-12-10T14:53:19.6408731Z E1210 14:52:07.523914    5550 memcache.go:265] "Unhandled Error" err="couldn't
+2025-12-10T14:53:19.6409190Z get current server API group list: Get
+2025-12-10T14:53:19.6409656Z \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect:
+2025-12-10T14:53:19.6410471Z connection refused"
+2025-12-10T14:53:19.6410968Z E1210 14:52:07.525962    5550 memcache.go:265] "Unhandled Error" err="couldn't
+2025-12-10T14:53:19.6411436Z get current server API group list: Get
+2025-12-10T14:53:19.6412359Z \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect:
+2025-12-10T14:53:19.6412807Z connection refused"
+2025-12-10T14:53:19.6413271Z E1210 14:52:07.528747    5550 memcache.go:265] "Unhandled Error" err="couldn't
+2025-12-10T14:53:19.6413773Z get current server API group list: Get
+2025-12-10T14:53:19.6414271Z \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect:
+2025-12-10T14:53:19.6414844Z connection refused"
+2025-12-10T14:53:19.6415457Z E1210 14:52:07.530660    5550 memcache.go:265] "Unhandled Error" err="couldn't
+2025-12-10T14:53:19.6416021Z get current server API group list: Get
+2025-12-10T14:53:19.6416600Z \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect:
+2025-12-10T14:53:19.6417456Z connection refused"
+2025-12-10T14:53:19.6418045Z The connection to the server localhost:8080 was refused - did you specify the
+2025-12-10T14:53:19.6418599Z right host or port?
+2025-12-10T14:53:19.6419060Z ./scripts/check_komodor.sh: line 4: myvar: command not found
+2025-12-10T14:53:19.6419181Z 
+2025-12-10T14:53:19.6419388Z State: exit status 127
+2025-12-10T14:53:19.6419716Z [0m[0m
+2025-12-10T14:53:19.8111738Z Terraform Plan Exit Code: 1
+2025-12-10T14:53:19.8131684Z 
+2025-12-10T14:53:19.8174996Z ##[error]Script failed with exit code: 1
