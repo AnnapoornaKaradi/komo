@@ -1,0 +1,17 @@
+2025-12-10T06:35:00.9510423Z [1m[31mError: [0m[0m[1mExternal Program Execution Failed[0m
+2025-12-10T06:35:00.9510742Z 
+2025-12-10T06:35:00.9511533Z [0m  on aks_komodor.tf line 8, in data "external" "komodor_release":
+2025-12-10T06:35:00.9512565Z    8:   program = [4m["bash", "${path.module}/scripts/check_komodor.sh"][0m
+2025-12-10T06:35:00.9513170Z [0m
+2025-12-10T06:35:00.9513765Z The data source received an unexpected error while attempting to execute the
+2025-12-10T06:35:00.9514335Z program.
+2025-12-10T06:35:00.9514542Z 
+2025-12-10T06:35:00.9514844Z Program: /usr/bin/bash
+2025-12-10T06:35:00.9515160Z Error Message: ./scripts/check_komodor.sh: line 5: RELEASE_NAME: command not
+2025-12-10T06:35:00.9515449Z found
+2025-12-10T06:35:00.9515540Z 
+2025-12-10T06:35:00.9515789Z State: exit status 127
+2025-12-10T06:35:00.9516177Z [0m[0m
+2025-12-10T06:35:01.0323342Z Terraform Plan Exit Code: 1
+2025-12-10T06:35:01.0345066Z 
+2025-12-10T06:35:01.0406030Z ##[error]Script failed with exit code: 1
