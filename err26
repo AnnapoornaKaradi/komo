@@ -1,0 +1,17 @@
+2025-12-09T15:36:09.8814723Z [31m
+2025-12-09T15:36:09.8815886Z [1m[31mError: [0m[0m[1mExternal Program Execution Failed[0m
+2025-12-09T15:36:09.8816539Z 
+2025-12-09T15:36:09.8817928Z [0m  on aks_komodor.tf line 8, in data "external" "komodor_release":
+2025-12-09T15:36:09.8818409Z    8:   program = [4m["bash", "${path.module}/scripts/check_komodor.sh"][0m
+2025-12-09T15:36:09.8818886Z [0m
+2025-12-09T15:36:09.8819331Z The data source received an unexpected error while attempting to execute the
+2025-12-09T15:36:09.8819916Z program.
+2025-12-09T15:36:09.8820091Z 
+2025-12-09T15:36:09.8820527Z Program: /usr/bin/bash
+2025-12-09T15:36:09.8820940Z Error Message: bash: ./scripts/check_komodor.sh: No such file or directory
+2025-12-09T15:36:09.8821141Z 
+2025-12-09T15:36:09.8821384Z State: exit status 127
+2025-12-09T15:36:09.8821678Z [0m[0m
+2025-12-09T15:36:09.9434992Z Terraform Plan Exit Code: 1
+2025-12-09T15:36:09.9451677Z 
+2025-12-09T15:36:09.9498024Z ##[error]Script failed with exit code: 1
