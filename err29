@@ -1,20 +1,23 @@
-2025-12-10T11:10:58.4415851Z [31m
-2025-12-10T11:10:58.4416703Z [1m[31mError: [0m[0m[1mInvalid character[0m
-2025-12-10T11:10:58.4417025Z 
-2025-12-10T11:10:58.4417606Z [0m  on aks_komodor.tf line 15, in data "external" "komodor_release":
-2025-12-10T11:10:58.4418410Z   15:        echo '{\"exists\":\"false\"}'; [4m\[0m
-2025-12-10T11:10:58.4418889Z [0m
-2025-12-10T11:10:58.4420606Z This character is not used within the language.
-2025-12-10T11:10:58.4421149Z [0m[0m
-2025-12-10T11:10:58.4425981Z [31m
-2025-12-10T11:10:58.4427431Z [1m[31mError: [0m[0m[1mInvalid multi-line string[0m
-2025-12-10T11:10:58.4428705Z 
-2025-12-10T11:10:58.4429808Z [0m  on aks_komodor.tf line 15, in data "external" "komodor_release":
-2025-12-10T11:10:58.4430243Z   15:        echo '{\"exists\":\"false\"}'; \
-2025-12-10T11:10:58.4430505Z   16:      fi"
-2025-12-10T11:10:58.4430599Z 
-2025-12-10T11:10:58.4430901Z Quoted strings may not be split over multiple lines. To produce a multi-line
-2025-12-10T11:10:58.4431266Z string, either use the \n escape to represent a newline character or use the
-2025-12-10T11:10:58.4431591Z "heredoc" multi-line template syntax.
-2025-12-10T11:10:58.4431892Z [0m[0m
-2025-12-10T11:10:58.4468233Z Terraform Plan Exit Code: 1
+2025-12-10T11:22:22.8727324Z [31m
+2025-12-10T11:22:22.8728215Z [1m[31mError: [0m[0m[1mExternal Program Execution Failed[0m
+2025-12-10T11:22:22.8728385Z 
+2025-12-10T11:22:22.8729101Z [0m  on aks_komodor.tf line 8, in data "external" "komodor_release":
+2025-12-10T11:22:22.8729982Z    8:   program = [4m[[0m
+2025-12-10T11:22:22.8730473Z [0m   9: [4m    "bash",[0m
+2025-12-10T11:22:22.8730975Z [0m  10: [4m    "lc",[0m
+2025-12-10T11:22:22.8731645Z [0m  11: [4m    "set -euo pipefail; if kubectl get deploy komodor-agent -n komodor >/dev/null 2>&1; then echo '{\"exists\":\"true\"}'; else echo '{\"exists\":\"false\"}'; fi"[0m
+2025-12-10T11:22:22.8731968Z [0m  12: [4m  ][0m  
+2025-12-10T11:22:22.8732164Z [0m
+2025-12-10T11:22:22.8732381Z The data source received an unexpected error while attempting to execute the
+2025-12-10T11:22:22.8733068Z program.
+2025-12-10T11:22:22.8733178Z 
+2025-12-10T11:22:22.8733400Z The program was executed, however it returned no additional error messaging.
+2025-12-10T11:22:22.8733521Z 
+2025-12-10T11:22:22.8733698Z Program: /usr/bin/bash
+2025-12-10T11:22:22.8733890Z State: exit status 1
+2025-12-10T11:22:22.8734098Z [0m[0m
+2025-12-10T11:22:22.9352269Z Terraform Plan Exit Code: 1
+2025-12-10T11:22:22.9369521Z 
+2025-12-10T11:22:22.9412485Z ##[error]Script failed with exit code: 1
+2025-12-10T11:22:22.9430154Z [command]/usr/local/bin/az account clear
+2025-12-10T11:22:23.6287175Z ##[section]Finishing: Terraform Plan
